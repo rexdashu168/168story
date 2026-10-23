@@ -107,7 +107,7 @@ function workPage(w){
   ui.range=rangeOf(last||1);
   var h=carousel(w.hero.map(function(p){return wimg(w,p)}))+'<button class="back" data-go="#/" aria-label="回首頁">‹</button>'+
    '<div class="info"><img class="cover" src="'+wimg(w,w.cover)+'" alt=""><div><h1>'+esc(w.title)+'</h1><div class="st">'+esc(w.subtitle)+'</div>'+
-   '<div class="meta">共 '+n+' 集・已上架 '+pubCount(d)+' 集</div>'+(latest(d)?'<div class="meta">最新：第 '+latest(d).ep+' 集・'+esc(latest(d).title)+'</div>':'<div class="meta">連載準備中</div>')+'</div></div>'+
+   (pubCount(d)===n?'<div class="meta">全 '+n+' 集・'+esc(w.status)+'</div>':'<div class="meta">共 '+n+' 集・已上架 '+pubCount(d)+' 集</div>'+(latest(d)?'<div class="meta">最新：第 '+latest(d).ep+' 集・'+esc(latest(d).title)+'</div>':'<div class="meta">連載準備中</div>'))+'</div></div>'+
    '<div class="tags">'+w.tags.concat([w.status]).map(function(t){return'<span>'+esc(t)+'</span>'}).join('')+'</div>'+
    '<div class="acts"><button class="btn" data-go="#/w/'+w.id+'/'+(last||1)+'">'+(last?'繼續閱讀　第 '+last+' 集':'從第一集開始讀')+'</button>'+
    '<button class="btn ghost'+(fav?' on':'')+'" id="fav">'+(fav?'★ 已收藏':'☆ 收藏')+'</button></div>'+
