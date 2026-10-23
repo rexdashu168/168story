@@ -219,8 +219,11 @@ function md(t,base){
     return'<p>'+esc(b).replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>';   // **字** 顯示成粗體，不露出星號
   }).join('');
 }
-function vpSize(){   // 題畫詩字級＝圖片寬度的 4.2%（不用 cqw，舊版手機瀏覽器不支援）
-  document.querySelectorAll('.pic').forEach(function(f){var v=f.querySelector('.vp');if(v)v.style.fontSize=(f.clientWidth*0.042).toFixed(1)+'px'})
+function vpSize(){   // 題畫詩字級：圖片寬度的 4.2%，但最長那一句一定要在圖片高度內排成一直行（不用 cqw，舊版手機瀏覽器不支援）
+  document.querySelectorAll('.pic').forEach(function(f){var v=f.querySelector('.vp');if(!v)return;
+    var n=0;v.querySelectorAll('span').forEach(function(s){n=Math.max(n,s.textContent.length)});
+    var top=parseFloat(v.style.top)||7,room=f.clientHeight*(1-top/100-0.06),pad=v.classList.contains('bg')?1.2:0;
+    v.style.fontSize=Math.min(f.clientWidth*0.042,room/(n*1.24+pad)).toFixed(1)+'px'})
 }
 window.addEventListener('resize',vpSize);
 function gal(g){   // 圖集：滑動時更新下方圓點
