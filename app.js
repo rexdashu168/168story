@@ -49,7 +49,7 @@ function favs(){return store.get('fav',[])}
 function touchRecent(id,n){var r=store.get('recent',[]).filter(function(x){return x.id!==id});r.unshift({id:id,ep:n,t:Date.now()});store.set('recent',r.slice(0,20))}
 
 /* ---------- 路由 ---------- */
-// #/  #/fav  #/me  #/w/作品  #/w/作品/集數
+// #/  #/fav  #/me  #/soon  #/w/作品  #/w/作品/集數
 function route(){
   clearInterval(timer);
   var go=ls.next;ls.next=false;if(!go)lsStop();   // 聽完一集自動接下一集時，聲音不停、播放列留著
@@ -59,6 +59,7 @@ function route(){
   if(h[0]==='w'&&work(h[1])){var w=work(h[1]);return loadEps(w).then(function(){h[2]?reader(w,+h[2]):workPage(w)}).catch(fail)}
   if(h[0]==='fav')return favPage();
   if(h[0]==='me')return mePage();
+  if(h[0]==='soon')return soonPage();
   home();
 }
 function fail(){app.className='wrap';app.innerHTML='<div class="empty"><div class="big">⚠</div>資料讀取失敗，請重新整理。</div>'}
@@ -89,7 +90,7 @@ function home(){
     if(rec){var w=work(rec.id),e=EPS[w.id].episodes[rec.ep-1];
       h+='<div class="sec"><h2>繼續閱讀</h2></div><div class="cont"><img src="'+wimg(w,w.cover)+'" alt=""><div class="t"><b>'+esc(w.title)+'－'+esc(w.subtitle)+'</b><span>讀到第 '+rec.ep+' 集・'+esc(e?tt(e):'')+'</span></div><button class="go" data-go="#/w/'+w.id+'/'+rec.ep+'">繼續</button></div>'}
     h+='<div class="sec"><h2>全部作品</h2><small>'+WORKS.length+' 部</small></div><div class="shelf">'+WORKS.map(bookCard).join('')+
-       '<div class="book soon"><div class="pic">敬請期待</div><b>下一部作品</b><small>籌備中</small></div></div>';
+       '<a class="book soon" href="#/soon"><div class="pic"><img src="soon/card.jpg" alt=""><span class="lbl">敬請期待</span></div><b>下一部作品</b><small>籌備中・先睹為快</small></a></div>';
     app.className='wrap hasnav';app.innerHTML=h+nav('home');
     bindGo();startCarousel();
   }).catch(fail);
@@ -422,6 +423,17 @@ function favPage(){
       '<div class="empty"><div class="big">☆</div>還沒有收藏的作品。<br>在作品頁按「收藏」就會出現在這裡。</div>');
     app.className='wrap hasnav';app.innerHTML=h+nav('fav');
   }).catch(fail);
+}
+
+/* ---------- 敬請期待：籌備中的作品先給朋友看 ---------- */
+var SOON=[['168 可轉債研究室',['soon/168_cb.jpg']],['168 台股投資練功房',['soon/168_stock.jpg']],
+  ['表情貼圖',['soon/mascot1.jpg','soon/mascot2.jpg','soon/mascot3.jpg','soon/mascot4.jpg']]];
+function soonPage(){
+  app.className='wrap';
+  app.innerHTML='<div class="top"><button class="ic" data-go="#/" aria-label="回首頁" style="color:var(--text)">‹</button><h1>敬請期待</h1><span style="width:40px"></span></div>'+
+    '<div class="soonp">'+SOON.map(function(g){return'<h3>'+esc(g[0])+'</h3>'+g[1].map(function(f){return'<img src="'+f+'" alt="" loading="lazy">'}).join('')}).join('')+
+    '<div class="soonend">籌備中，敬請期待</div></div>';
+  window.scrollTo(0,0);bindGo();
 }
 
 /* ---------- 我的 ---------- */
