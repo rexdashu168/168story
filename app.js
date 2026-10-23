@@ -190,10 +190,11 @@ function reader(w,n){
   getText(wbase(w)+'chapters/'+e.file).then(function(t){
     body.className='body';body.innerHTML=md(t,wbase(w)+'chapters/');
     body.querySelectorAll('.gal').forEach(gal);
+    setTimeout(vpSize,0);
     (e.pics||[]).forEach(function(pc){   // 正文插圖：放在含有指定文字的那一段後面（插圖另外存，正文從 Drive 更新也不會被蓋掉）
       var ps=body.querySelectorAll('p');for(var i=0;i<ps.length;i++){if(ps[i].textContent.indexOf(pc.after)>=0){
         var f=document.createElement('figure');f.className='pic';f.innerHTML='<img src="'+esc(wimg(w,pc.img))+'" alt="" loading="lazy">'+(pc.poem?'<div class="vp'+(pc.dark?' dk':'')+(pc.bg?' bg':'')+'" style="'+(pc.side==='left'?'left':'right')+':'+(pc.x||4)+'%;top:'+(pc.y||7)+'%">'+pc.poem.map(esc).join('<br>')+'</div>':'');   // 題畫詩：網站疊字，圖本身無字
-        ps[i].parentNode.insertBefore(f,ps[i].nextSibling);break}}
+        ps[i].parentNode.insertBefore(f,ps[i].nextSibling);var im=f.querySelector('img');im.onload=vpSize;break}}
     });
     var r=store.get(key,0);   // 回到上次讀到的位置
     setTimeout(function(){
@@ -218,6 +219,10 @@ function md(t,base){
     return'<p>'+esc(b).replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>';   // **字** 顯示成粗體，不露出星號
   }).join('');
 }
+function vpSize(){   // 題畫詩字級＝圖片寬度的 4.2%（不用 cqw，舊版手機瀏覽器不支援）
+  document.querySelectorAll('.pic').forEach(function(f){var v=f.querySelector('.vp');if(v)v.style.fontSize=(f.clientWidth*0.042).toFixed(1)+'px'})
+}
+window.addEventListener('resize',vpSize);
 function gal(g){   // 圖集：滑動時更新下方圓點
   var tr=g.querySelector('.gtr'),ds=g.querySelectorAll('.gdots i'),cn=g.querySelector('.gcnt b');
   function u(){var k=Math.round(tr.scrollLeft/tr.clientWidth);ds.forEach(function(d,i){d.classList.toggle('on',i===k)});if(cn)cn.textContent=k+1}
