@@ -189,6 +189,7 @@ function reader(w,n){
   body.innerHTML='<div class="empty">載入中…</div>';
   getText(wbase(w)+'chapters/'+e.file).then(function(t){
     body.className='body';body.innerHTML=md(t,wbase(w)+'chapters/');
+    body.querySelectorAll('.gal').forEach(gal);
     var r=store.get(key,0);   // 回到上次讀到的位置
     setTimeout(function(){
       if(r>0.02&&r<0.95)scrollTo(0,r*(document.documentElement.scrollHeight-innerHeight));
@@ -201,10 +202,21 @@ function md(t,base){
   return t.replace(/^﻿/,'').replace(/\r/g,'').split(/\n\s*\n/).map(function(b){
     b=b.trim(); if(!b)return'';
     if(/^([-－—*＊]\s*){3,}$/.test(b))return'<div class="brk">◇　◇　◇</div>';   // --- *** ＊＊＊ 都當場景轉換
-    var im=b.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/);
+    var ls=b.split('\n'),IMG=/^!\[([^\]]*)\]\(([^)\s]+)\)$/;
+    if(ls.length>1&&ls.every(function(l){return IMG.test(l.trim())})){   // 連續幾行圖片 = 左右滑動的圖集
+      return'<div class="gal"><div class="gtr">'+ls.map(function(l){var m=l.trim().match(IMG);
+        return'<figure><img src="'+esc(src(base+m[2]))+'" alt="'+esc(m[1])+'" loading="lazy">'+(m[1]?'<figcaption>'+esc(m[1])+'</figcaption>':'')+'</figure>'}).join('')+
+        '</div><div class="gdots">'+ls.map(function(){return'<i></i>'}).join('')+'</div></div>';
+    }
+    var im=b.match(IMG);
     if(im)return'<figure><img src="'+esc(src(base+im[2]))+'" alt="'+esc(im[1])+'" loading="lazy">'+(im[1]?'<figcaption>'+esc(im[1])+'</figcaption>':'')+'</figure>';
     return'<p>'+esc(b).replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>';   // **字** 顯示成粗體，不露出星號
   }).join('');
+}
+function gal(g){   // 圖集：滑動時更新下方圓點
+  var tr=g.querySelector('.gtr'),ds=g.querySelectorAll('.gdots i');
+  function u(){var k=Math.round(tr.scrollLeft/tr.clientWidth);ds.forEach(function(d,i){d.classList.toggle('on',i===k)})}
+  tr.addEventListener('scroll',u,{passive:true});u();
 }
 function sheet(html,bind){
   var m=document.createElement('div');m.className='mask';
