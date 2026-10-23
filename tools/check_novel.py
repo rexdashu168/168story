@@ -8,7 +8,7 @@
 import json, os, re, sys, tempfile, shutil
 
 OLD_NAMES = ['芬嵐', '仲誠', '淑棻', '博彥']
-KEYS = {'ep', 'era', 'status', 'file', 'title', 'img'}   # img：每集主圖，路徑相對於作品資料夾
+KEYS = {'ep', 'era', 'status', 'file', 'title', 'img', 'pics'}   # img：每集主圖，路徑相對於作品資料夾
 
 def check(root):
     errs = []
@@ -46,6 +46,11 @@ def check(root):
                 errs.append('%s：標成 ready 但找不到正文 %s' % (tag, e['file']))
                 continue
             t = open(f, encoding='utf-8').read()
+            for pc in e.get('pics', []):   # 正文插圖：圖要存在、要接在正文裡找得到的那段文字後面
+                if not os.path.exists(os.path.join(base, pc.get('img', ''))):
+                    errs.append('%s：插圖不存在 %s' % (tag, pc.get('img')))
+                if not pc.get('after') or pc['after'] not in t:
+                    errs.append('%s：插圖的位置文字在正文裡找不到「%s」' % (tag, pc.get('after')))
             if not t.strip():
                 errs.append('%s：正文是空的' % tag)
             if '�' in t:

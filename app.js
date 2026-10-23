@@ -190,6 +190,11 @@ function reader(w,n){
   getText(wbase(w)+'chapters/'+e.file).then(function(t){
     body.className='body';body.innerHTML=md(t,wbase(w)+'chapters/');
     body.querySelectorAll('.gal').forEach(gal);
+    (e.pics||[]).forEach(function(pc){   // 正文插圖：放在含有指定文字的那一段後面（插圖另外存，正文從 Drive 更新也不會被蓋掉）
+      var ps=body.querySelectorAll('p');for(var i=0;i<ps.length;i++){if(ps[i].textContent.indexOf(pc.after)>=0){
+        var f=document.createElement('figure');f.className='pic';f.innerHTML='<img src="'+esc(wimg(w,pc.img))+'" alt="" loading="lazy">';
+        ps[i].parentNode.insertBefore(f,ps[i].nextSibling);break}}
+    });
     var r=store.get(key,0);   // 回到上次讀到的位置
     setTimeout(function(){
       if(r>0.02&&r<0.95)scrollTo(0,r*(document.documentElement.scrollHeight-innerHeight));
