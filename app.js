@@ -111,7 +111,7 @@ function workPage(w){
    '<div class="tags">'+w.tags.concat([w.status]).map(function(t){return'<span>'+esc(t)+'</span>'}).join('')+'</div>'+
    '<div class="acts"><button class="btn" data-go="#/w/'+w.id+'/'+(last||1)+'">'+(last?'繼續閱讀　第 '+last+' 集':'從第一集開始讀')+'</button>'+
    '<button class="btn ghost'+(fav?' on':'')+'" id="fav">'+(fav?'★ 已收藏':'☆ 收藏')+'</button></div>'+
-   (rd?'<div class="prog"><i style="width:'+Math.round(rd/n*100)+'%"></i></div><div class="progt">已讀 '+rd+' / '+n+' 集</div>':'')+
+   (rd?'<div class="prog"><i style="width:'+Math.round(rd/pubCount(d)*100)+'%"></i></div><div class="progt">已讀 '+rd+' / '+pubCount(d)+' 集</div>':'')+
    '<div class="tabs"><button data-t="intro">簡介</button><button data-t="eps">選集</button></div><div class="pane" id="pane"></div>';
   app.className='wrap hasnav';app.innerHTML=h+nav('');
   bindGo();startCarousel();
