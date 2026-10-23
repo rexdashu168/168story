@@ -65,15 +65,17 @@ def self_test(root):
         assert not errs, '正對照組（目前的網站）就有錯：%s' % errs
         p = os.path.join(t, 'works', 'liancheng', 'episodes.json')
         d = json.load(open(p, encoding='utf-8'))
-        d['episodes'][0]['status'] = 'ready'              # 壞案例一：ready 但沒有正文
-        d['episodes'][1]['title'] = '芬嵐的長笛'            # 壞案例二：舊人名
-        d['episodes'][2]['note'] = '內部摘要'               # 壞案例四：內部欄位跑進公開目錄
-        d['episodes'][3]['status'] = 'draft'               # 壞案例五：私人預覽的狀態跑進公開目錄
+        w = [i for i, e in enumerate(d['episodes']) if e['status'] == 'writing']   # 挑還沒上架的集數來做壞案例
+        assert len(w) >= 4, '撰寫中的集數不夠做自我測試'
+        d['episodes'][w[0]]['status'] = 'ready'            # 壞案例一：ready 但沒有正文
+        d['episodes'][w[1]]['title'] = '芬嵐的長笛'         # 壞案例二：舊人名
+        d['episodes'][w[2]]['note'] = '內部摘要'            # 壞案例四：內部欄位跑進公開目錄
+        d['episodes'][w[3]]['status'] = 'draft'            # 壞案例五：私人預覽的狀態跑進公開目錄
         json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False)
         errs, _ = check(t)
         for k in ('找不到正文', '舊人名', '不該有的欄位', '狀態只能是'):
             assert any(k in e for e in errs), (k, errs)
-        open(os.path.join(t, 'works', 'liancheng', 'chapters', d['episodes'][0]['file']), 'w', encoding='utf-8').write('正文。\n\n![圖](不存在.jpg)\n')
+        open(os.path.join(t, 'works', 'liancheng', 'chapters', d['episodes'][w[0]]['file']), 'w', encoding='utf-8').write('正文。\n\n![圖](不存在.jpg)\n')
         errs, _ = check(t)                                 # 壞案例三：插圖不存在
         assert any('插圖不存在' in e for e in errs) and not any('找不到正文' in e for e in errs), errs
         print('自我測試通過：正常的網站放行，六種壞案例都有叫')
