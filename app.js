@@ -52,6 +52,7 @@ function touchRecent(id,n){var r=store.get('recent',[]).filter(function(x){retur
 // #/  #/fav  #/me  #/w/作品  #/w/作品/集數
 function route(){
   clearInterval(timer);
+  var go=tts.next;tts.next=false;tts.go=go;if(!go)ttsStop();   // 聽完一集自動接下一集時，播放列留著
   document.querySelectorAll('.mask,.sheet').forEach(function(x){x.remove()});
   if(onScroll){window.removeEventListener('scroll',onScroll);onScroll=null}   // 離開閱讀頁就不再記位置
   var h=location.hash.replace(/^#\/?/,'').split('/');
@@ -164,7 +165,7 @@ function reader(w,n){
   store.set('last_'+w.id,n);touchRecent(w.id,n);
   app.className='wrap';
   app.innerHTML='<div class="reader '+set.theme+'" style="--fs:'+FS[set.fs]+'px">'+
-   '<div class="rtop"><button class="ic" data-go="#/w/'+w.id+'" aria-label="回作品頁">‹</button><div class="t">第 '+n+' 集　'+esc(tt(e))+'</div><button class="ic" id="aa" aria-label="閱讀設定" style="font-size:16px">Aa</button></div>'+
+   '<div class="rtop"><button class="ic" data-go="#/w/'+w.id+'" aria-label="回作品頁">‹</button><div class="t">第 '+n+' 集　'+esc(tt(e))+'</div>'+(TTS&&ready(e)?'<button class="ic" id="ttsb" aria-label="聽這一集">'+IC.ear+'</button>':'')+'<button class="ic" id="aa" aria-label="閱讀設定" style="font-size:16px">Aa</button></div>'+
    '<div class="rbar"><i id="rbar"></i></div>'+
    (e.img?'<figure class="epimg"><img src="'+esc(wimg(w,e.img))+'" alt=""></figure>':'')+'<div class="rhead"><div class="sc">'+eraName(e)+'・第 '+n+' 集</div><h2>'+esc(tt(e))+'</h2><div class="orn">◆ ◆ ◆</div></div>'+(e.status==='draft'?'<div class="draftnote">舊版備份，尚未經作者核定，只在私人預覽檔出現，不會公開。</div>':'')+
    '<div id="body"></div>'+
@@ -176,6 +177,13 @@ function reader(w,n){
   document.getElementById('next').onclick=function(){location.hash='#/w/'+w.id+'/'+(n+1)};
   document.getElementById('list').onclick=function(){listSheet(w,n)};
   document.getElementById('aa').onclick=function(){setSheet()};
+  tts.ctx={w:w,n:n,nx:nx};tts.list=[];tts.i=0;
+  var tb=document.getElementById('ttsb');
+  if(tb)tb.onclick=function(){
+    if(tts.on){ttsPause();return}
+    if(!tts.list.length){if(!ttsBuild()){toast('正文還在載入');return}tts.i=ttsFrom()}
+    ttsPlay();
+  };
   var body=document.getElementById('body'), key='pos_'+w.id+'_'+n, loaded=false;
   if(onScroll)window.removeEventListener('scroll',onScroll);
   onScroll=function(){
@@ -200,6 +208,7 @@ function reader(w,n){
     setTimeout(function(){
       if(r>0.02&&r<0.95)scrollTo(0,r*(document.documentElement.scrollHeight-innerHeight));
       setTimeout(function(){loaded=true;onScroll()},120);
+      if(tts.go){tts.go=false;if(ttsBuild())ttsPlay();else ttsStop()}   // 上一集聽完，接著唸這一集
     },50);
   }).catch(function(){body.innerHTML='<div class="empty">正文讀取失敗，請重新整理。</div>'});
 }
@@ -258,6 +267,159 @@ function setSheet(){
     s.querySelectorAll('[data-fs]').forEach(function(b){b.onclick=function(){set.fs=+b.dataset.fs;apply()}});
     s.querySelectorAll('[data-th]').forEach(function(b){b.onclick=function(){set.theme=b.dataset.th;apply()}});
     apply();
+  });
+}
+
+/* ---------- 聽小說：用手機內建的語音朗讀，不另做聲音檔 ---------- */
+var TTS=('speechSynthesis' in window&&'SpeechSynthesisUtterance' in window)?window.speechSynthesis:null;
+var RATES=[0.8,1,1.2,1.5];
+var tts={on:false,list:[],i:0,gen:0,u:null,el:null,next:false,go:false,lock:null,ctx:null,err:0};
+var IC={play:'<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',pause:'<svg viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>',
+  prev:'<svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>',next:'<svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg>',
+  ear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>'};
+if(TTS)TTS.getVoices();   // 有些瀏覽器要先問一次，聲音清單才會開始載入
+function ttsVoices(){   // 台灣中文優先，同語言再挑高品質；粵語不列
+  if(!TTS)return[];
+  function sc(v){var l=(v.lang||'').replace('_','-').toLowerCase(),nm=v.name||'',s;
+    if(l==='zh-tw'||/臺灣|台灣|taiwan/i.test(nm))s=300;else if(l.indexOf('zh-hant')===0)s=250;else if(l==='zh-hk'||l.indexOf('yue')===0)return 0;else if(l.indexOf('zh')===0||l.indexOf('cmn')===0)s=100;else return 0;
+    if(/natural|neural/i.test(nm))s+=40;else if(/premium|enhanced|增強|高音質/i.test(nm))s+=30;else if(/online/i.test(nm))s+=20;
+    return s}
+  return TTS.getVoices().map(function(v){return{v:v,s:sc(v)}}).filter(function(x){return x.s>0}).sort(function(a,b){return b.s-a.s}).map(function(x){return x.v});
+}
+function ttsVoice(){var vs=ttsVoices(),nm=store.get('tts_voice','');for(var i=0;i<vs.length;i++)if(vs[i].name===nm)return vs[i];return vs[0]||null}
+function ttsSplit(t){   // 一句一句唸；太長的句子在逗號切開（有些瀏覽器一次唸太長會中斷）
+  var out=[],b='',E='。！？!?…',Q='」』）)';
+  for(var i=0;i<t.length;i++){var c=t[i],nx=t[i+1]||'';b+=c;
+    if((E.indexOf(c)>=0&&E.indexOf(nx)<0&&Q.indexOf(nx)<0)||(Q.indexOf(c)>=0&&E.indexOf(t[i-1]||'')>=0)||(b.length>80&&'，、；：'.indexOf(c)>=0)){if(b.trim())out.push(b.trim());b=''}}
+  if(b.trim())out.push(b.trim());
+  return out;
+}
+function ttsBuild(){
+  var r=app.querySelector('.reader'),c=tts.ctx;if(!r||!c)return false;
+  var h=r.querySelector('.rhead h2'),ps=r.querySelectorAll('#body p'),end=r.querySelector('.endcard .e1');
+  tts.list=[];tts.i=0;
+  if(!ps.length)return false;
+  if(h)tts.list.push({el:h,t:'第'+zh(c.n)+'集。'+h.textContent});
+  ps.forEach(function(p){ttsSplit(p.textContent).forEach(function(s){tts.list.push({el:p,t:s})})});
+  if(end)tts.list.push({el:end,t:'第'+zh(c.n)+'集，完。'});
+  return true;
+}
+function ttsFrom(){   // 從畫面上正在看的那一段開始唸
+  if(scrollY<150)return 0;
+  for(var i=0;i<tts.list.length;i++){if(tts.list[i].el.getBoundingClientRect().bottom>70)return i}
+  return 0;
+}
+function ttsMark(el){   // 標亮正在唸的段落，快超出畫面就捲過去
+  if(tts.el===el)return;
+  if(tts.el)tts.el.classList.remove('tts');
+  tts.el=el;el.classList.add('tts');
+  var b=el.getBoundingClientRect(),bar=document.getElementById('ttsbar'),bh=bar?bar.offsetHeight:0;
+  if(b.top<60||b.bottom>innerHeight-bh-16)scrollTo({top:scrollY+b.top-innerHeight*0.28,behavior:'smooth'});
+}
+function ttsSay(){
+  var g=++tts.gen,c=tts.list[tts.i];
+  if(!c)return ttsDone();
+  ttsMark(c.el);
+  var u=new SpeechSynthesisUtterance(c.t),v=ttsVoice();
+  u.lang=v?v.lang:'zh-TW';if(v)u.voice=v;
+  u.rate=RATES[store.get('tts_rate',1)]||1;
+  u.onstart=function(){tts.err=0};
+  u.onend=function(){if(g!==tts.gen||!tts.on)return;tts.i++;ttsSay()};
+  u.onerror=function(ev){
+    if(g!==tts.gen||!tts.on)return;
+    if(ev.error==='not-allowed'){ttsPause();toast('請按播放鍵開始朗讀');return}
+    if(ev.error==='interrupted'||ev.error==='canceled')return;
+    if(++tts.err>3){ttsPause();toast('這台裝置的朗讀暫時無法使用');return}
+    tts.i++;ttsSay();
+  };
+  tts.u=u;   // 留住這一句，免得被回收後收不到「唸完了」
+  TTS.speak(u);
+}
+function ttsPlay(){
+  if(!TTS||!tts.list.length)return;
+  if(tts.i>=tts.list.length)tts.i=0;
+  tts.on=true;tts.err=0;
+  if(TTS.speaking||TTS.pending)TTS.cancel();
+  if(TTS.paused)TTS.resume();
+  ttsSay();ttsWake(true);ttsUI();
+}
+function ttsPause(){if(!TTS)return;tts.on=false;tts.gen++;TTS.cancel();ttsWake(false);ttsUI()}
+function ttsStop(){
+  if(!TTS)return;
+  var b=document.getElementById('ttsbar');
+  if(tts.on||TTS.speaking){tts.on=false;tts.gen++;TTS.cancel()}
+  ttsWake(false);
+  if(b)b.remove();document.body.classList.remove('ttson');
+  if(tts.el)tts.el.classList.remove('tts');tts.el=null;tts.list=[];tts.i=0;
+  var hb=document.getElementById('ttsb');if(hb)hb.classList.remove('on');
+}
+function ttsJump(d){   // 上一段／下一段，以段落為單位
+  if(!tts.list.length)return;
+  var i=tts.i,el=tts.list[i]&&tts.list[i].el;
+  if(d>0){while(i<tts.list.length&&tts.list[i].el===el)i++;if(i>=tts.list.length)i=tts.list.length-1}
+  else{var s=i;while(s>0&&tts.list[s-1].el===el)s--;   // 先回本段開頭，已在開頭才到上一段
+    if(s===i&&s>0){var pe=tts.list[s-1].el;s--;while(s>0&&tts.list[s-1].el===pe)s--}
+    i=s}
+  tts.i=i;
+  if(tts.on){TTS.cancel();ttsSay()}else ttsMark(tts.list[i].el);
+}
+function ttsDone(){
+  var c=tts.ctx,nx=c&&c.nx;
+  if(nx&&ready(nx)&&store.get('tts_auto',true)){
+    tts.next=true;tts.on=false;tts.gen++;toast('接著聽第 '+(c.n+1)+' 集');
+    location.hash='#/w/'+c.w.id+'/'+(c.n+1);return;
+  }
+  ttsPause();tts.i=0;toast(nx?'這一集聽完了':'全書聽完了');
+}
+function ttsWake(on){   // 朗讀時不讓螢幕自動關掉（iPhone 鎖螢幕後朗讀會停）
+  try{
+    if(on&&navigator.wakeLock&&!tts.lock)navigator.wakeLock.request('screen').then(function(l){tts.lock=l;l.addEventListener('release',function(){tts.lock=null})}).catch(function(){});
+    else if(!on&&tts.lock){tts.lock.release();tts.lock=null}
+  }catch(e){}
+}
+document.addEventListener('visibilitychange',function(){   // 切回來時，如果系統把朗讀停掉了，就從這一句重新唸
+  if(document.hidden||!tts.on||!TTS)return;
+  ttsWake(true);
+  setTimeout(function(){if(tts.on&&!TTS.speaking){TTS.cancel();ttsSay()}},300);
+});
+function ttsUI(){
+  var b=document.getElementById('ttsbar');
+  if(!b){
+    b=document.createElement('div');b.id='ttsbar';b.className='ttsbar';
+    b.innerHTML='<button data-t="prev" aria-label="上一段">'+IC.prev+'</button><button data-t="play" class="pp"></button><button data-t="next" aria-label="下一段">'+IC.next+'</button>'+
+      '<button data-t="rate" class="tx" aria-label="語速"></button><button data-t="set" class="tx">聲音</button><button data-t="close" class="tx" aria-label="關閉朗讀">✕</button>';
+    b.onclick=function(ev){
+      var k=ev.target.closest('[data-t]');if(!k)return;k=k.dataset.t;
+      if(k==='play'){if(tts.on)ttsPause();else ttsPlay()}
+      else if(k==='prev')ttsJump(-1);
+      else if(k==='next')ttsJump(1);
+      else if(k==='rate'){store.set('tts_rate',(store.get('tts_rate',1)+1)%RATES.length);ttsUI();if(tts.on){TTS.cancel();ttsSay()}}
+      else if(k==='set')ttsSheet();
+      else if(k==='close')ttsStop();
+    };
+    document.body.appendChild(b);document.body.classList.add('ttson');
+  }
+  var p=b.querySelector('.pp');p.innerHTML=tts.on?IC.pause:IC.play;p.setAttribute('aria-label',tts.on?'暫停':'播放');
+  b.querySelector('[data-t=rate]').textContent=RATES[store.get('tts_rate',1)]+'×';
+  var hb=document.getElementById('ttsb');if(hb)hb.classList.toggle('on',tts.on);
+}
+function ttsSheet(){
+  var vs=ttsVoices();
+  sheet('<h3>朗讀設定</h3>'+
+   '<div class="opt">讀完自動接下一集<div class="seg"><button data-a="1">開</button><button data-a="0">關</button></div></div>'+
+   '<div class="vh">聲音（點一下就從目前這段試聽）</div>'+
+   (vs.length?'<div class="vlist">'+vs.map(function(v,i){return'<button data-v="'+i+'">'+esc(v.name)+'<small>'+esc(v.lang)+'</small></button>'}).join('')+'</div>'
+     :'<div class="vnote">這台裝置找不到中文語音。</div>')+
+   '<div class="vnote">聲音由這台手機或電腦提供，每台裝置不一樣。iPhone 可以到「設定」的「輔助使用」→「朗讀內容」→「聲音」，下載中文（台灣）的增強版聲音，音質會比較好。</div>',
+  function(s){
+    function draw(){
+      var a=store.get('tts_auto',true),c=ttsVoice();
+      s.querySelectorAll('[data-a]').forEach(function(b){b.classList.toggle('on',(b.dataset.a==='1')===a)});
+      s.querySelectorAll('[data-v]').forEach(function(b){b.classList.toggle('on',!!c&&vs[+b.dataset.v].name===c.name)});
+    }
+    s.querySelectorAll('[data-a]').forEach(function(b){b.onclick=function(){store.set('tts_auto',b.dataset.a==='1');draw()}});
+    s.querySelectorAll('[data-v]').forEach(function(b){b.onclick=function(){store.set('tts_voice',vs[+b.dataset.v].name);draw();if(tts.on){TTS.cancel();ttsSay()}else ttsPlay()}});
+    draw();
   });
 }
 
