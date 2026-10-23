@@ -1,0 +1,14 @@
+{
+ "name": "等待輪迴 小說館",
+ "short_name": "等待輪迴",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#120c0b",
+ "theme_color": "#120c0b",
+ "lang": "zh-Hant",
+ "icons": [
+  {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+  {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"}
+ ]
+}
