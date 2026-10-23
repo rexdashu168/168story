@@ -6,7 +6,13 @@
    "status": "ready",
    "file": "EP001.md",
    "title": "拜託，別再吹了！",
-   "img": "img/ep/EP001.jpg"
+   "img": "img/ep/EP001.jpg",
+   "pics": [
+    {
+     "after": "芬蘭伸手在他眼前晃了晃。",
+     "img": "img/pic/EP001_1.jpg"
+    }
+   ]
   },
   {
    "ep": 2,
