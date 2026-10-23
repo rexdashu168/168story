@@ -5,7 +5,7 @@
    "era": "1998",
    "status": "ready",
    "file": "EP001.md",
-   "title": "拜託，別再吹了！",
+   "title": "「一切都變了」他卻偏要吹",
    "img": "img/ep/EP001.jpg",
    "pics": [
     {
@@ -35,7 +35,7 @@
    "era": "1998",
    "status": "ready",
    "file": "EP002.md",
-   "title": "那首曲子",
+   "title": "跟我在一起，妳不快樂了？",
    "img": "img/ep/EP002.jpg",
    "pics": [
     {
@@ -61,7 +61,7 @@
    "era": "1998",
    "status": "ready",
    "file": "EP003.md",
-   "title": "心裡的一根刺",
+   "title": "我哪一點比不上劉伯彥？",
    "img": "img/ep/EP003.jpg"
   },
   {
@@ -69,112 +69,112 @@
    "era": "1998",
    "status": "ready",
    "file": "EP004.md",
-   "title": "籠中的小鳥"
+   "title": "是擔心牠，還是捨不得牠？"
   },
   {
    "ep": 5,
    "era": "1998",
    "status": "ready",
    "file": "EP005.md",
-   "title": "放我走吧！"
+   "title": "「你就像當時不肯放手的我」"
   },
   {
    "ep": 6,
    "era": "1998",
    "status": "ready",
    "file": "EP006.md",
-   "title": "不能只做朋友"
+   "title": "「那如果我想抱妳呢？」"
   },
   {
    "ep": 7,
    "era": "1998",
    "status": "ready",
    "file": "EP007.md",
-   "title": "羅門開場"
+   "title": "明天公演，他的戲服不見了！"
   },
   {
    "ep": 8,
    "era": "1998",
    "status": "ready",
    "file": "EP008.md",
-   "title": "戲服還沒找到"
+   "title": "二公子要光著上身出場？"
   },
   {
    "ep": 9,
    "era": "1998",
    "status": "ready",
    "file": "EP009.md",
-   "title": "天兵天將，一盤散沙"
+   "title": "「請問劉伯彥在不在這裡？」"
   },
   {
    "ep": 10,
    "era": "1998",
    "status": "ready",
    "file": "EP010.md",
-   "title": "三個月一通電話都沒有！"
+   "title": "她說好怕，他只回：乖，別鬧"
   },
   {
    "ep": 11,
    "era": "1998",
    "status": "ready",
    "file": "EP011.md",
-   "title": "你真的會陪我？"
+   "title": "在你心裡，我只是個影子？"
   },
   {
    "ep": 12,
    "era": "1998",
    "status": "ready",
    "file": "EP012.md",
-   "title": "各就各位，好戲開始囉！"
+   "title": "聽說她和伯彥對戲對出真感情？"
   },
   {
    "ep": 13,
    "era": "古代",
    "status": "ready",
    "file": "EP013.md",
-   "title": "嬤嬤……小蝶……你們在哪裡！"
+   "title": "黑暗裡，有人學爹喊她「連兒」"
   },
   {
    "ep": 14,
    "era": "古代",
    "status": "ready",
    "file": "EP014.md",
-   "title": "鬼魅環伺，嬌豔難過二十春"
+   "title": "二十歲那年，妳得永遠回來"
   },
   {
    "ep": 15,
    "era": "古代",
    "status": "ready",
    "file": "EP015.md",
-   "title": "三歲那年"
+   "title": "活不過二十？她只剩不到兩年"
   },
   {
    "ep": 16,
    "era": "古代",
    "status": "ready",
    "file": "EP016.md",
-   "title": "貼心娃兒"
+   "title": "小姐開口：我要終生不嫁！"
   },
   {
    "ep": 17,
    "era": "古代",
    "status": "ready",
    "file": "EP017.md",
-   "title": "繡樓笑語"
+   "title": "她要的夫婿，得敢說「看不懂」"
   },
   {
    "ep": 18,
    "era": "古代",
    "status": "ready",
    "file": "EP018.md",
-   "title": "以文擇婿"
+   "title": "想娶她？先猜畫中人在想什麼"
   },
   {
    "ep": 19,
    "era": "古代",
    "status": "ready",
    "file": "EP019.md",
-   "title": "連城病容能傾城",
+   "title": "花二百兩買詩，就能娶她？",
    "pics": [
     {
      "after": "連城病容能傾城，可憐嬌豔二十春",
@@ -194,7 +194,7 @@
    "era": "古代",
    "status": "ready",
    "file": "EP020.md",
-   "title": "繡樓來詩",
+   "title": "四句詩，讓她看到茶都涼了",
    "pics": [
     {
      "after": "慵鬟高髻綠婆娑",
@@ -217,42 +217,42 @@
    "era": "古代",
    "status": "ready",
    "file": "EP021.md",
-   "title": "知音未見"
+   "title": "他窮，是因為錢都先給了別人"
   },
   {
    "ep": 22,
    "era": "古代",
    "status": "ready",
    "file": "EP022.md",
-   "title": "不是做傻事"
+   "title": "她想拿保命的藥錢去幫人"
   },
   {
    "ep": 23,
    "era": "古代",
    "status": "ready",
    "file": "EP023.md",
-   "title": "銀兩託付"
+   "title": "「這件事，先別讓爹爹知道」"
   },
   {
    "ep": 24,
    "era": "古代",
    "status": "ready",
    "file": "EP024.md",
-   "title": "燈油燃藥"
+   "title": "二百兩送上門，他竟推回去"
   },
   {
    "ep": 25,
    "era": "古代",
    "status": "ready",
    "file": "EP025.md",
-   "title": "銀兩與自尊"
+   "title": "他一句保重，她連涼藥都喝了"
   },
   {
    "ep": 26,
    "era": "古代",
    "status": "ready",
    "file": "EP026.md",
-   "title": "紅粉知音",
+   "title": "「百無一用是書生哪！」",
    "pics": [
     {
      "after": "女心傷悲為嫁期，恨為書生百無用。",
@@ -274,168 +274,168 @@
    "era": "1998",
    "status": "ready",
    "file": "EP027.md",
-   "title": "那年，我們說好一起走"
+   "title": "初遇那天，他跪著向椅子道歉"
   },
   {
    "ep": 28,
    "era": "古代",
    "status": "ready",
    "file": "EP028.md",
-   "title": "針尖見血"
+   "title": "嫁他？妳病了，他拿什麼買藥"
   },
   {
    "ep": 29,
    "era": "古代",
    "status": "ready",
    "file": "EP029.md",
-   "title": "錯配鴛鴦"
+   "title": "銀子能買藥，買不到我愛誰"
   },
   {
    "ep": 30,
    "era": "古代",
    "status": "ready",
    "file": "EP030.md",
-   "title": "但憑爹爹心意"
+   "title": "那句話到了唇邊，她會說嗎？"
   },
   {
    "ep": 31,
    "era": "1998",
    "status": "ready",
    "file": "EP031.md",
-   "title": "你說的永遠"
+   "title": "他要走四十天，她最後一個知道"
   },
   {
    "ep": 32,
    "era": "古代",
    "status": "ready",
    "file": "EP032.md",
-   "title": "藥漸難進"
+   "title": "一碗藥都喝不完，叫我怎不怕？"
   },
   {
    "ep": 33,
    "era": "古代",
    "status": "ready",
    "file": "EP033.md",
-   "title": "相思成疾"
+   "title": "他在書鋪聽說：她要嫁人了"
   },
   {
    "ep": 34,
    "era": "古代",
    "status": "ready",
    "file": "EP034.md",
-   "title": "血染衣襟"
+   "title": "那條帕子，她悄悄藏進枕邊"
   },
   {
    "ep": 35,
    "era": "1998",
    "status": "ready",
    "file": "EP035.md",
-   "title": "只要五分鐘"
+   "title": "他溫柔的眼神，給了另一個女人"
   },
   {
    "ep": 36,
    "era": "1998",
    "status": "ready",
    "file": "EP036.md",
-   "title": "那你對我演啊"
+   "title": "「那你對我演啊！」她哭著喊"
   },
   {
    "ep": 37,
    "era": "1998",
    "status": "ready",
    "file": "EP037.md",
-   "title": "永遠只有兩年"
+   "title": "「你是不是要跟我分手？」"
   },
   {
    "ep": 38,
    "era": "古代",
    "status": "ready",
    "file": "EP038.md",
-   "title": "三天三夜"
+   "title": "三天三夜，那盞燈沒有熄"
   },
   {
    "ep": 39,
    "era": "古代",
    "status": "ready",
    "file": "EP039.md",
-   "title": "那粒蜜餞"
+   "title": "大夫一句：恐怕得心裡有準備"
   },
   {
    "ep": 40,
    "era": "古代",
    "status": "ready",
    "file": "EP040.md",
-   "title": "不准說後事"
+   "title": "管家捧來喪葬舊例，老爺怒了"
   },
   {
    "ep": 41,
    "era": "1998",
    "status": "ready",
    "file": "EP041.md",
-   "title": "沒撥出去的電話"
+   "title": "撥到第三個數字，他停住了"
   },
   {
    "ep": 42,
    "era": "古代",
    "status": "ready",
    "file": "EP042.md",
-   "title": "萬一有救呢"
+   "title": "頭陀說有救，但藥引是……"
   },
   {
    "ep": 43,
    "era": "古代",
    "status": "ready",
    "file": "EP043.md",
-   "title": "荊棘入夢"
+   "title": "趕不上考試？那就下次再考"
   },
   {
    "ep": 44,
    "era": "古代",
    "status": "ready",
    "file": "EP044.md",
-   "title": "二十春，十八春"
+   "title": "孩子都在唱：她只剩十八春"
   },
   {
    "ep": 45,
    "era": "1998",
    "status": "ready",
    "file": "EP045.md",
-   "title": "他怎麼會這麼傻"
+   "title": "換成我，真的做得到嗎？"
   },
   {
    "ep": 46,
    "era": "古代",
    "status": "ready",
    "file": "EP046.md",
-   "title": "一門之隔"
+   "title": "一門之隔，連見一面都不行"
   },
   {
    "ep": 47,
    "era": "古代",
    "status": "ready",
    "file": "EP047.md",
-   "title": "病體煎熬願代受"
+   "title": "替她受苦？窮書生說：我願意"
   },
   {
    "ep": 48,
    "era": "1998",
    "status": "ready",
    "file": "EP048.md",
-   "title": "那五分鐘以前"
+   "title": "有沒有想我？他說：不能隨便講"
   },
   {
    "ep": 49,
    "era": "古代",
    "status": "ready",
    "file": "EP049.md",
-   "title": "誰肯為她"
+   "title": "一錢心頭肉，王公子給不給？"
   },
   {
    "ep": 50,
    "era": "古代",
    "status": "ready",
    "file": "EP050.md",
-   "title": "一錢與一命"
+   "title": "我捨不得女兒，怎叫人捨兒子？"
   },
   {
    "ep": 51,
@@ -449,189 +449,189 @@
    "era": "古代",
    "status": "ready",
    "file": "EP052.md",
-   "title": "你怕不怕"
+   "title": "說要替她割肉，他卻怕了"
   },
   {
    "ep": 53,
    "era": "1998",
    "status": "ready",
    "file": "EP053.md",
-   "title": "不必演得那麼像"
+   "title": "難道你就不是別人的心肝？"
   },
   {
    "ep": 54,
    "era": "古代",
    "status": "ready",
    "file": "EP054.md",
-   "title": "袈裟與利刃"
+   "title": "若她今夜撐不過去……"
   },
   {
    "ep": 55,
    "era": "古代",
    "status": "ready",
    "file": "EP055.md",
-   "title": "一炷香"
+   "title": "一炷香燒完前，你還能反悔"
   },
   {
    "ep": 56,
    "era": "古代",
    "status": "ready",
    "file": "EP056.md",
-   "title": "帶酒來的人"
+   "title": "她還沒醒，他就帶喜酒上門"
   },
   {
    "ep": 57,
    "era": "古代",
    "status": "ready",
    "file": "EP057.md",
-   "title": "下月十五"
+   "title": "爹怒了：那句話不是賣身契"
   },
   {
    "ep": 58,
    "era": "1998",
    "status": "ready",
    "file": "EP058.md",
-   "title": "不是誰的所有物"
+   "title": "學長送花，她說：我不能收"
   },
   {
    "ep": 59,
    "era": "古代",
    "status": "ready",
    "file": "EP059.md",
-   "title": "是爹看錯了人"
+   "title": "她病得說不出話，你卻談條件？"
   },
   {
    "ep": 60,
    "era": "1998",
    "status": "ready",
    "file": "EP060.md",
-   "title": "有事，要記得說"
+   "title": "可是，我也希望自己是重要的"
   },
   {
    "ep": 61,
    "era": "古代",
    "status": "ready",
    "file": "EP061.md",
-   "title": "她醒了"
+   "title": "偷吃蜜餞那刻，床上有聲音"
   },
   {
    "ep": 62,
    "era": "1998",
    "status": "ready",
    "file": "EP062.md",
-   "title": "那碗沒吃完的麵"
+   "title": "她等到湯都涼了，他只顧講戲"
   },
   {
    "ep": 63,
    "era": "古代",
    "status": "ready",
    "file": "EP063.md",
-   "title": "天涯何處無芳草"
+   "title": "若我醒著，我一定不許！"
   },
   {
    "ep": 64,
    "era": "古代",
    "status": "ready",
    "file": "EP064.md",
-   "title": "鴛鴦未繡完"
+   "title": "若我繡不完，您替我補幾針？"
   },
   {
    "ep": 65,
    "era": "古代",
    "status": "ready",
    "file": "EP065.md",
-   "title": "香消玉殞"
+   "title": "病成這樣，她還惦記爹吃飯沒"
   },
   {
    "ep": 66,
    "era": "古代",
    "status": "ready",
    "file": "EP066.md",
-   "title": "醒在陌生處"
+   "title": "救命！霧裡伸出一隻冰冷的手"
   },
   {
    "ep": 67,
    "era": "古代",
    "status": "ready",
    "file": "EP067.md",
-   "title": "魑魅魍魎"
+   "title": "第一次見面，竟在黃泉路上"
   },
   {
    "ep": 68,
    "era": "古代",
    "status": "ready",
    "file": "EP068.md",
-   "title": "顧書記"
+   "title": "她問：生死簿會不會記錯了？"
   },
   {
    "ep": 69,
    "era": "古代",
    "status": "ready",
    "file": "EP069.md",
-   "title": "恩重如山"
+   "title": "黃泉之下：我們還要做夫妻"
   },
   {
    "ep": 70,
    "era": "古代",
    "status": "ready",
    "file": "EP070.md",
-   "title": "回家的路"
+   "title": "明明一起走，怎麼只有我回來？"
   },
   {
    "ep": 71,
    "era": "古代",
    "status": "ready",
    "file": "EP071.md",
-   "title": "藥還是苦的"
+   "title": "死裡逃生，藥卻沒變甜"
   },
   {
    "ep": 72,
    "era": "古代",
    "status": "ready",
    "file": "EP072.md",
-   "title": "明天去看花"
+   "title": "爹問他：你真的想清楚了？"
   },
   {
    "ep": 73,
    "era": "1998",
    "status": "ready",
    "file": "EP073.md",
-   "title": "戲服還沒脫"
+   "title": "一張便條，一通讓他沉默的電話"
   },
   {
    "ep": 74,
    "era": "1998",
    "status": "ready",
    "file": "EP074.md",
-   "title": "這次，我沒有追問"
+   "title": "芬蘭和伯彥，被說像一對"
   },
   {
    "ep": 75,
    "era": "1998",
    "status": "ready",
    "file": "EP075.md",
-   "title": "還沒說出口的話"
+   "title": "他竟然沒問她要去哪裡"
   },
   {
    "ep": 76,
    "era": "1998",
    "status": "ready",
    "file": "EP076.md",
-   "title": "那把修過的傘"
+   "title": "三個月，你打過幾次電話給我？"
   },
   {
    "ep": 77,
    "era": "1998",
    "status": "ready",
    "file": "EP077.md",
-   "title": "約好的那一天"
+   "title": "我們的事，你還放在心上嗎？"
   },
   {
    "ep": 78,
    "era": "1998",
    "status": "ready",
    "file": "EP078.md",
-   "title": "也許吧",
+   "title": "被問愛上喬年？她只回三個字",
    "pics": [
     {
      "after": "驀然回首，那人卻在燈火闌珊處",
@@ -653,7 +653,7 @@
    "era": "1998",
    "status": "ready",
    "file": "EP079.md",
-   "title": "劉伯彥，你聽到沒有",
+   "title": "她對全場喊：我會等你一輩子",
    "pics": [
     {
      "after": "她一個人，在整個舞台上盡情地飛舞。",
@@ -666,28 +666,28 @@
    "era": "1998",
    "status": "ready",
    "file": "EP080.md",
-   "title": "燈暗之後"
+   "title": "她喊你名字，你怎麼沒回答？"
   },
   {
    "ep": 81,
    "era": "1998",
    "status": "ready",
    "file": "EP081.md",
-   "title": "最後一次鞠躬"
+   "title": "謝幕問：連城，妳到底選誰？"
   },
   {
    "ep": 82,
    "era": "1998",
    "status": "ready",
    "file": "EP082.md",
-   "title": "戲服裡的每一個人"
+   "title": "陌生女孩送花，卡片只寫兩行"
   },
   {
    "ep": 83,
    "era": "1998",
    "status": "ready",
    "file": "EP083.md",
-   "title": "還有人沒有謝幕"
+   "title": "那晚之後，誰還沒有謝幕？"
   }
  ]
 }
