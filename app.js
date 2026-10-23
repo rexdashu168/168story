@@ -206,7 +206,7 @@ function md(t,base){
     if(ls.length>1&&ls.every(function(l){return IMG.test(l.trim())})){   // 連續幾行圖片 = 左右滑動的圖集
       return'<div class="gal"><div class="gtr">'+ls.map(function(l){var m=l.trim().match(IMG);
         return'<figure><img src="'+esc(src(base+m[2]))+'" alt="'+esc(m[1])+'" loading="lazy">'+(m[1]?'<figcaption>'+esc(m[1])+'</figcaption>':'')+'</figure>'}).join('')+
-        '</div><div class="gdots">'+ls.map(function(){return'<i></i>'}).join('')+'</div></div>';
+        '</div>'+(ls.length>12?'<div class="gcnt"><b>1</b> / '+ls.length+'</div>':'<div class="gdots">'+ls.map(function(){return'<i></i>'}).join('')+'</div>')+'</div>';   // 頁數多就改顯示頁碼
     }
     var im=b.match(IMG);
     if(im)return'<figure><img src="'+esc(src(base+im[2]))+'" alt="'+esc(im[1])+'" loading="lazy">'+(im[1]?'<figcaption>'+esc(im[1])+'</figcaption>':'')+'</figure>';
@@ -214,8 +214,8 @@ function md(t,base){
   }).join('');
 }
 function gal(g){   // 圖集：滑動時更新下方圓點
-  var tr=g.querySelector('.gtr'),ds=g.querySelectorAll('.gdots i');
-  function u(){var k=Math.round(tr.scrollLeft/tr.clientWidth);ds.forEach(function(d,i){d.classList.toggle('on',i===k)})}
+  var tr=g.querySelector('.gtr'),ds=g.querySelectorAll('.gdots i'),cn=g.querySelector('.gcnt b');
+  function u(){var k=Math.round(tr.scrollLeft/tr.clientWidth);ds.forEach(function(d,i){d.classList.toggle('on',i===k)});if(cn)cn.textContent=k+1}
   tr.addEventListener('scroll',u,{passive:true});u();
 }
 function sheet(html,bind){
