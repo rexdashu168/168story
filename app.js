@@ -426,7 +426,7 @@ function favPage(){
 }
 
 /* ---------- 敬請期待：籌備中的作品先給朋友看 ---------- */
-var SOON=[['168 台股投資教室・Q人的練功之路',['soon/168_home.jpg']],['168 可轉債研究室',['soon/168_cb.jpg']],['168 台股投資練功房',['soon/168_stock.jpg']],
+var SOON=[['168 台股投資教室・Q人的練功之路',['soon/168_home.jpg']],['168 可轉債研究室',['soon/168_cb.jpg']],['168 台股投資練功房',['soon/168_stock.jpg']],['168 書房',['soon/168_study.jpg']],
   ['表情貼圖',['soon/mascot1.jpg','soon/mascot2.jpg','soon/mascot3.jpg','soon/mascot4.jpg']]];
 function soonPage(){
   app.className='wrap';
