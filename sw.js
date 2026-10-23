@@ -1,7 +1,7 @@
 /* 離線快取：目錄與正文一律先上網拿最新（拿不到才用快取），圖片先用快取。
    改了 index.html／app.js／app.css 時，把版本號 +1。 */
-var VER='novel-v19';
-var SHELL=['./','index.html','app.css?v=18','app.js?v=19','manifest.webmanifest','icon-192.png'];
+var VER='novel-v20';
+var SHELL=['./','index.html','app.css?v=18','app.js?v=20','manifest.webmanifest','icon-192.png'];
 self.addEventListener('install',function(e){e.waitUntil(caches.open(VER).then(function(c){return c.addAll(SHELL)}));self.skipWaiting()});
 self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(ks){return Promise.all(ks.filter(function(k){return k!==VER}).map(function(k){return caches.delete(k)}))}));self.clients.claim()});
 self.addEventListener('fetch',function(e){
