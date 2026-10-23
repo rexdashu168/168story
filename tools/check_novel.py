@@ -65,7 +65,10 @@ def self_test(root):
         assert not errs, '正對照組（目前的網站）就有錯：%s' % errs
         p = os.path.join(t, 'works', 'liancheng', 'episodes.json')
         d = json.load(open(p, encoding='utf-8'))
-        w = [i for i, e in enumerate(d['episodes']) if e['status'] == 'writing']   # 挑還沒上架的集數來做壞案例
+        # 全部上架之後就沒有「撰寫中」的集數可借用，所以在暫存複本裡補四集假的來做壞案例
+        for k in range(4):
+            d['episodes'].append({'ep': 901 + k, 'era': '1998', 'status': 'writing', 'file': 'EP%03d.md' % (901 + k), 'title': '測試'})
+        w = [i for i, e in enumerate(d['episodes']) if e['status'] == 'writing']
         assert len(w) >= 4, '撰寫中的集數不夠做自我測試'
         d['episodes'][w[0]]['status'] = 'ready'            # 壞案例一：ready 但沒有正文
         d['episodes'][w[1]]['title'] = '芬嵐的長笛'         # 壞案例二：舊人名

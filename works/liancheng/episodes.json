@@ -73,28 +73,28 @@
   {
    "ep": 11,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP011.md",
    "title": "你真的會陪我？"
   },
   {
    "ep": 12,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP012.md",
    "title": "各就各位，好戲開始囉！"
   },
   {
    "ep": 13,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP013.md",
    "title": "嬤嬤……小蝶……你們在哪裡！"
   },
   {
    "ep": 14,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP014.md",
    "title": "鬼魅環伺，嬌豔難過二十春"
   },
@@ -129,7 +129,7 @@
   {
    "ep": 19,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP019.md",
    "title": "連城病容能傾城"
   },
@@ -164,406 +164,408 @@
   {
    "ep": 24,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP024.md",
    "title": "燈油燃藥"
   },
   {
    "ep": 25,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP025.md",
    "title": "銀兩與自尊"
   },
   {
    "ep": 26,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP026.md",
    "title": "紅粉知音"
   },
   {
    "ep": 27,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP027.md",
    "title": "那年，我們說好一起走"
   },
   {
    "ep": 28,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP028.md",
    "title": "針尖見血"
   },
   {
    "ep": 29,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP029.md",
    "title": "錯配鴛鴦"
   },
   {
    "ep": 30,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP030.md",
    "title": "但憑爹爹心意"
   },
   {
    "ep": 31,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP031.md",
    "title": "你說的永遠"
   },
   {
    "ep": 32,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP032.md",
    "title": "藥漸難進"
   },
   {
    "ep": 33,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP033.md",
    "title": "相思成疾"
   },
   {
    "ep": 34,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP034.md",
    "title": "血染衣襟"
   },
   {
    "ep": 35,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP035.md",
    "title": "只要五分鐘"
   },
   {
    "ep": 36,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP036.md",
    "title": "那你對我演啊"
   },
   {
    "ep": 37,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP037.md",
    "title": "永遠只有兩年"
   },
   {
    "ep": 38,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP038.md",
    "title": "三天三夜"
   },
   {
    "ep": 39,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP039.md",
    "title": "那粒蜜餞"
   },
   {
    "ep": 40,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP040.md",
    "title": "不准說後事"
   },
   {
    "ep": 41,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP041.md",
    "title": "沒撥出去的電話"
   },
   {
    "ep": 42,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP042.md",
    "title": "萬一有救呢"
   },
   {
    "ep": 43,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP043.md",
    "title": "荊棘入夢"
   },
   {
    "ep": 44,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP044.md",
    "title": "二十春，十八春"
   },
   {
    "ep": 45,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP045.md",
    "title": "他怎麼會這麼傻"
   },
   {
    "ep": 46,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP046.md",
    "title": "一門之隔"
   },
   {
    "ep": 47,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP047.md",
    "title": "病體煎熬願代受"
   },
   {
    "ep": 48,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP048.md",
    "title": "那五分鐘以前"
   },
   {
    "ep": 49,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP049.md",
    "title": "誰肯為她"
   },
   {
    "ep": 50,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP050.md",
    "title": "一錢與一命"
   },
   {
    "ep": 51,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP051.md",
-   "title": "他不割我割"
+   "title": "他不割，我割"
   },
   {
    "ep": 52,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP052.md",
    "title": "你怕不怕"
   },
   {
    "ep": 53,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP053.md",
    "title": "不必演得那麼像"
   },
   {
    "ep": 54,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP054.md",
    "title": "袈裟與利刃"
   },
   {
    "ep": 55,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP055.md",
    "title": "一炷香"
   },
   {
    "ep": 56,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP056.md",
    "title": "帶酒來的人"
   },
   {
    "ep": 57,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP057.md",
    "title": "下月十五"
   },
   {
    "ep": 58,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP058.md",
    "title": "不是誰的所有物"
   },
   {
    "ep": 59,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP059.md",
    "title": "是爹看錯了人"
   },
   {
    "ep": 60,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP060.md",
-   "title": "有事要記得說"
+   "title": "有事，要記得說"
   },
   {
    "ep": 61,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP061.md",
    "title": "她醒了"
   },
   {
    "ep": 62,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP062.md",
    "title": "那碗沒吃完的麵"
   },
   {
    "ep": 63,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP063.md",
    "title": "天涯何處無芳草"
   },
   {
    "ep": 64,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP064.md",
    "title": "鴛鴦未繡完"
   },
   {
    "ep": 65,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP065.md",
    "title": "香消玉殞"
   },
   {
    "ep": 66,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP066.md",
    "title": "醒在陌生處"
   },
   {
    "ep": 67,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP067.md",
    "title": "魑魅魍魎"
   },
   {
    "ep": 68,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP068.md",
    "title": "顧書記"
   },
   {
    "ep": 69,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP069.md",
    "title": "恩重如山"
   },
   {
    "ep": 70,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP070.md",
-   "title": "簿冊上的名字"
+   "title": "回家的路"
   },
   {
    "ep": 71,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP071.md",
-   "title": "留下來的人"
+   "title": "藥還是苦的"
   },
   {
    "ep": 72,
    "era": "古代",
-   "status": "writing",
+   "status": "ready",
    "file": "EP072.md",
    "title": "明天去看花"
   },
   {
    "ep": 73,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP073.md",
    "title": "戲服還沒脫"
   },
   {
    "ep": 74,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP074.md",
    "title": "這次，我沒有追問"
   },
   {
    "ep": 75,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP075.md",
    "title": "還沒說出口的話"
   },
   {
    "ep": 76,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP076.md",
    "title": "那把修過的傘"
   },
   {
    "ep": 77,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP077.md",
    "title": "約好的那一天"
   },
   {
    "ep": 78,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP078.md",
    "title": "也許吧"
   },
   {
    "ep": 79,
    "era": "1998",
-   "status": "writing",
+   "status": "ready",
    "file": "EP079.md",
    "title": "劉伯彥，你聽到沒有"
   },
   {
    "ep": 80,
    "era": "1998",
-   "status": "planned",
-   "file": "EP080.md"
+   "status": "ready",
+   "file": "EP080.md",
+   "title": "燈暗之後"
   },
   {
    "ep": 81,
    "era": "1998",
-   "status": "planned",
-   "file": "EP081.md"
+   "status": "ready",
+   "file": "EP081.md",
+   "title": "最後一次鞠躬"
   },
   {
    "ep": 82,
