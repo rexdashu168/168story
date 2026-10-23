@@ -34,8 +34,8 @@ def main():
                 for m in re.findall(r'^!\[[^\]]*\]\(([^)\s]+)\)\s*$', t, re.M):
                     img(b + 'chapters/' + m)
     html = rd('index.html')
-    html = html.replace('<link rel="stylesheet" href="app.css?v=3">', '<style>' + rd('app.css') + '</style>')
-    html = html.replace('<script src="app.js?v=3"></script>',
+    html = html.replace('<link rel="stylesheet" href="app.css?v=4">', '<style>' + rd('app.css') + '</style>')
+    html = html.replace('<script src="app.js?v=4"></script>',
         '<script>window.__PRE=' + json.dumps(pre, ensure_ascii=False) + ';</script>\n<script>' + rd('app.js') + '</script>')
     assert '__PRE' in html and '<style>' in html, 'index.html 的引用改了，打包沒有成功'
     open(sys.argv[1], 'w', encoding='utf-8').write(html)

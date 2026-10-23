@@ -196,14 +196,14 @@ function reader(w,n){
     },50);
   }).catch(function(){body.innerHTML='<div class="empty">正文讀取失敗，請重新整理。</div>'});
 }
-/* 正文格式：空一行＝分段；單獨一行 --- ＝場景轉換；![說明](檔名) ＝插圖 */
+/* 正文格式：空一行＝分段；單獨一行 ---、***、＊＊＊ ＝場景轉換；**字**＝粗體；![說明](檔名) ＝插圖 */
 function md(t,base){
   return t.replace(/^﻿/,'').replace(/\r/g,'').split(/\n\s*\n/).map(function(b){
     b=b.trim(); if(!b)return'';
-    if(/^-{3,}$/.test(b))return'<div class="brk">◇　◇　◇</div>';
+    if(/^([-－—*＊]\s*){3,}$/.test(b))return'<div class="brk">◇　◇　◇</div>';   // --- *** ＊＊＊ 都當場景轉換
     var im=b.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/);
     if(im)return'<figure><img src="'+esc(src(base+im[2]))+'" alt="'+esc(im[1])+'" loading="lazy">'+(im[1]?'<figcaption>'+esc(im[1])+'</figcaption>':'')+'</figure>';
-    return'<p>'+esc(b).replace(/\n/g,'<br>')+'</p>';
+    return'<p>'+esc(b).replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>';   // **字** 顯示成粗體，不露出星號
   }).join('');
 }
 function sheet(html,bind){
