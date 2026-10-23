@@ -577,8 +577,9 @@
   {
    "ep": 83,
    "era": "1998",
-   "status": "planned",
-   "file": "EP083.md"
+   "status": "ready",
+   "file": "EP083.md",
+   "title": "還有人沒有謝幕"
   }
  ]
 }
