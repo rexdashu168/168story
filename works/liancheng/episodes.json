@@ -13,10 +13,6 @@
      "img": "img/pic/EP001_1.jpg"
     },
     {
-     "after": "她當場笑得彎下腰。",
-     "img": "img/pic/EP001_2.jpg"
-    },
-    {
      "after": "仲承愣了一下，隨即追著她跑。",
      "img": "img/pic/EP001_3.jpg"
     },
@@ -32,7 +28,13 @@
    "status": "ready",
    "file": "EP002.md",
    "title": "那首曲子",
-   "img": "img/ep/EP002.jpg"
+   "img": "img/ep/EP002.jpg",
+   "pics": [
+    {
+     "after": "芬蘭笑得前仰後合。",
+     "img": "img/pic/EP002_1.jpg"
+    }
+   ]
   },
   {
    "ep": 3,
