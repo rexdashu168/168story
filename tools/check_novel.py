@@ -8,7 +8,7 @@
 import json, os, re, sys, tempfile, shutil
 
 OLD_NAMES = ['芬嵐', '仲誠', '淑棻', '博彥']
-KEYS = {'ep', 'era', 'status', 'file', 'title', 'img', 'pics'}   # img：每集主圖，路徑相對於作品資料夾
+KEYS = {'ep', 'era', 'status', 'file', 'title', 'img', 'pics', 'audio'}   # img：每集主圖，路徑相對於作品資料夾；audio：聲音檔名（不含副檔名）
 
 def check(root):
     errs = []
@@ -37,6 +37,8 @@ def check(root):
             for n in OLD_NAMES:
                 if n in e.get('title', ''):
                     errs.append('%s：篇名有舊人名「%s」' % (tag, n))
+            if e.get('audio') and not (w.get('audio') and re.match(r'^(https://|[\w-]+/)', w['audio']) and w['audio'].endswith('/')):
+                errs.append('%s：有聲音檔，但作品清單沒有正確的聲音檔網址（https:// 開頭、/ 結尾）' % tag)
             if e.get('img') and not os.path.exists(os.path.join(base, e['img'])):
                 errs.append('%s：主圖不存在 %s' % (tag, e['img']))
             if e['status'] != 'ready':
@@ -85,14 +87,15 @@ def self_test(root):
         d['episodes'][w[2]]['note'] = '內部摘要'            # 壞案例四：內部欄位跑進公開目錄
         d['episodes'][w[3]]['status'] = 'draft'            # 壞案例五：私人預覽的狀態跑進公開目錄
         d['episodes'][w[1]]['img'] = 'img/ep/不存在.jpg'     # 壞案例六：主圖不存在
+        d['episodes'][w[2]]['audio'] = 'EP903'              # 壞案例八：有聲音檔，作品卻沒有聲音檔網址
         json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False)
         errs, _ = check(t)
-        for k in ('找不到正文', '舊人名', '不該有的欄位', '狀態只能是', '主圖不存在'):
+        for k in ('找不到正文', '舊人名', '不該有的欄位', '狀態只能是', '主圖不存在', '聲音檔網址'):
             assert any(k in e for e in errs), (k, errs)
         open(os.path.join(t, 'works', 'liancheng', 'chapters', d['episodes'][w[0]]['file']), 'w', encoding='utf-8').write('正文。\n\n![圖](不存在.jpg)\n')
         errs, _ = check(t)                                 # 壞案例三：插圖不存在
         assert any('插圖不存在' in e for e in errs) and not any('找不到正文' in e for e in errs), errs
-        print('自我測試通過：正常的網站放行，七種壞案例都有叫')
+        print('自我測試通過：正常的網站放行，八種壞案例都有叫')
     finally:
         shutil.rmtree(tmp)
 
