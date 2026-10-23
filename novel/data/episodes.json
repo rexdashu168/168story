@@ -1,0 +1,840 @@
+{
+ "work": {
+  "title": "等待輪迴Ⅱ",
+  "subtitle": "連城",
+  "source": "181V42一零八逐篇（V4.4 人名校訂）",
+  "intro": "由1998年羅門劇團舞台劇《等待輪迴Ⅱ－連城》衍生的古典文學奇情長篇小說；故事兼具詩意、幽默、人性、親情、愛情與生死神話。"
+ },
+ "scenes": [
+  {
+   "scene": 1,
+   "name": "自由"
+  },
+  {
+   "scene": 2,
+   "name": "羅門劇團"
+  },
+  {
+   "scene": 3,
+   "name": "地獄幻境"
+  },
+  {
+   "scene": 4,
+   "name": "以文會親"
+  },
+  {
+   "scene": 5,
+   "name": "鳳求凰"
+  },
+  {
+   "scene": 6,
+   "name": "知己"
+  },
+  {
+   "scene": 7,
+   "name": "燈油燃藥"
+  },
+  {
+   "scene": 8,
+   "name": "錯配鴛鴦"
+  },
+  {
+   "scene": 9,
+   "name": "相思成疾"
+  },
+  {
+   "scene": 10,
+   "name": "承諾"
+  },
+  {
+   "scene": 11,
+   "name": "西域頭陀"
+  },
+  {
+   "scene": 12,
+   "name": "門外苦守"
+  },
+  {
+   "scene": 13,
+   "name": "割肉相贈"
+  },
+  {
+   "scene": 14,
+   "name": "強奪連城"
+  },
+  {
+   "scene": 15,
+   "name": "香消玉殞"
+  },
+  {
+   "scene": 16,
+   "name": "上窮碧落下黃泉"
+  },
+  {
+   "scene": 17,
+   "name": "曲終人散"
+  },
+  {
+   "scene": 18,
+   "name": "誓言"
+  }
+ ],
+ "episodes": [
+  {
+   "ep": 1,
+   "scene": 1,
+   "title": "拜託，別再吹了！",
+   "status": "writing",
+   "file": "EP001.md"
+  },
+  {
+   "ep": 2,
+   "scene": 1,
+   "title": "那首曲子",
+   "status": "writing",
+   "file": "EP002.md"
+  },
+  {
+   "ep": 3,
+   "scene": 1,
+   "title": "心裡的一根刺",
+   "status": "writing",
+   "file": "EP003.md"
+  },
+  {
+   "ep": 4,
+   "scene": 1,
+   "title": "籠中的小鳥",
+   "status": "writing",
+   "file": "EP004.md"
+  },
+  {
+   "ep": 5,
+   "scene": 1,
+   "title": "放我走吧",
+   "status": "writing",
+   "file": "EP005.md"
+  },
+  {
+   "ep": 6,
+   "scene": 1,
+   "title": "不能只做朋友",
+   "status": "writing",
+   "file": "EP006.md"
+  },
+  {
+   "ep": 7,
+   "scene": 2,
+   "title": "羅門開場",
+   "status": "writing",
+   "file": "EP007.md"
+  },
+  {
+   "ep": 8,
+   "scene": 2,
+   "title": "戲服還沒找到",
+   "status": "writing",
+   "file": "EP008.md"
+  },
+  {
+   "ep": 9,
+   "scene": 2,
+   "title": "你死的時候",
+   "status": "writing",
+   "file": "EP009.md"
+  },
+  {
+   "ep": 10,
+   "scene": 2,
+   "title": "三個月",
+   "status": "writing",
+   "file": "EP010.md"
+  },
+  {
+   "ep": 11,
+   "scene": 2,
+   "title": "你真的會陪我？",
+   "status": "writing",
+   "file": "EP011.md"
+  },
+  {
+   "ep": 12,
+   "scene": 2,
+   "title": "各就各位",
+   "status": "writing",
+   "file": "EP012.md"
+  },
+  {
+   "ep": 13,
+   "scene": 3,
+   "title": "地獄幻境",
+   "status": "writing",
+   "file": "EP013.md"
+  },
+  {
+   "ep": 14,
+   "scene": 3,
+   "title": "鬼魅環伺",
+   "status": "writing",
+   "file": "EP014.md"
+  },
+  {
+   "ep": 15,
+   "scene": 3,
+   "title": "命數之聲",
+   "status": "writing",
+   "file": "EP015.md"
+  },
+  {
+   "ep": 16,
+   "scene": 3,
+   "title": "二十春",
+   "status": "writing",
+   "file": "EP016.md"
+  },
+  {
+   "ep": 17,
+   "scene": 3,
+   "title": "不肯認命",
+   "status": "writing",
+   "file": "EP017.md"
+  },
+  {
+   "ep": 18,
+   "scene": 3,
+   "title": "夢醒仍寒",
+   "status": "writing",
+   "file": "EP018.md"
+  },
+  {
+   "ep": 19,
+   "scene": 4,
+   "title": "三歲那年",
+   "status": "writing",
+   "file": "EP019.md"
+  },
+  {
+   "ep": 20,
+   "scene": 4,
+   "title": "貼心娃兒",
+   "status": "writing",
+   "file": "EP020.md"
+  },
+  {
+   "ep": 21,
+   "scene": 4,
+   "title": "繡樓笑語",
+   "status": "writing",
+   "file": "EP021.md"
+  },
+  {
+   "ep": 22,
+   "scene": 4,
+   "title": "病與婚事",
+   "status": "writing",
+   "file": "EP022.md"
+  },
+  {
+   "ep": 23,
+   "scene": 4,
+   "title": "以文擇婿",
+   "status": "writing",
+   "file": "EP023.md"
+  },
+  {
+   "ep": 24,
+   "scene": 4,
+   "title": "筆墨初試",
+   "status": "writing",
+   "file": "EP024.md"
+  },
+  {
+   "ep": 25,
+   "scene": 5,
+   "title": "兩處燈光",
+   "status": "writing",
+   "file": "EP025.md"
+  },
+  {
+   "ep": 26,
+   "scene": 5,
+   "title": "富商的盤算",
+   "status": "writing",
+   "file": "EP026.md"
+  },
+  {
+   "ep": 27,
+   "scene": 5,
+   "title": "價值連城",
+   "status": "writing",
+   "file": "EP027.md"
+  },
+  {
+   "ep": 28,
+   "scene": 5,
+   "title": "自己寫的詩",
+   "status": "writing",
+   "file": "EP028.md"
+  },
+  {
+   "ep": 29,
+   "scene": 5,
+   "title": "倦繡未解",
+   "status": "writing",
+   "file": "EP029.md"
+  },
+  {
+   "ep": 30,
+   "scene": 5,
+   "title": "鳳求凰",
+   "status": "writing",
+   "file": "EP030.md"
+  },
+  {
+   "ep": 31,
+   "scene": 6,
+   "title": "繡樓來詩",
+   "status": "writing",
+   "file": "EP031.md"
+  },
+  {
+   "ep": 32,
+   "scene": 6,
+   "title": "只有他看懂",
+   "status": "writing",
+   "file": "EP032.md"
+  },
+  {
+   "ep": 33,
+   "scene": 6,
+   "title": "知音未見",
+   "status": "writing",
+   "file": "EP033.md"
+  },
+  {
+   "ep": 34,
+   "scene": 6,
+   "title": "書生仗義",
+   "status": "writing",
+   "file": "EP034.md"
+  },
+  {
+   "ep": 35,
+   "scene": 6,
+   "title": "不是做傻事",
+   "status": "writing",
+   "file": "EP035.md"
+  },
+  {
+   "ep": 36,
+   "scene": 6,
+   "title": "銀兩託付",
+   "status": "writing",
+   "file": "EP036.md"
+  },
+  {
+   "ep": 37,
+   "scene": 7,
+   "title": "燈油燃藥",
+   "status": "writing",
+   "file": "EP037.md"
+  },
+  {
+   "ep": 38,
+   "scene": 7,
+   "title": "銀兩與自尊",
+   "status": "writing",
+   "file": "EP038.md"
+  },
+  {
+   "ep": 39,
+   "scene": 7,
+   "title": "好事助好人",
+   "status": "writing",
+   "file": "EP039.md"
+  },
+  {
+   "ep": 40,
+   "scene": 7,
+   "title": "紅粉知音",
+   "status": "writing",
+   "file": "EP040.md"
+  },
+  {
+   "ep": 41,
+   "scene": 7,
+   "title": "百無一用",
+   "status": "writing",
+   "file": "EP041.md"
+  },
+  {
+   "ep": 42,
+   "scene": 7,
+   "title": "書生長夜",
+   "status": "writing",
+   "file": "EP042.md"
+  },
+  {
+   "ep": 43,
+   "scene": 8,
+   "title": "針尖見血",
+   "status": "writing",
+   "file": "EP043.md"
+  },
+  {
+   "ep": 44,
+   "scene": 8,
+   "title": "王家二公子",
+   "status": "writing",
+   "file": "EP044.md"
+  },
+  {
+   "ep": 45,
+   "scene": 8,
+   "title": "錯配鴛鴦",
+   "status": "writing",
+   "file": "EP045.md"
+  },
+  {
+   "ep": 46,
+   "scene": 8,
+   "title": "爹的一片心",
+   "status": "writing",
+   "file": "EP046.md"
+  },
+  {
+   "ep": 47,
+   "scene": 8,
+   "title": "不願嫁他",
+   "status": "writing",
+   "file": "EP047.md"
+  },
+  {
+   "ep": 48,
+   "scene": 8,
+   "title": "但憑爹爹心意",
+   "status": "writing",
+   "file": "EP048.md"
+  },
+  {
+   "ep": 49,
+   "scene": 9,
+   "title": "藥漸難進",
+   "status": "writing",
+   "file": "EP049.md"
+  },
+  {
+   "ep": 50,
+   "scene": 9,
+   "title": "針線停了",
+   "status": "writing",
+   "file": "EP050.md"
+  },
+  {
+   "ep": 51,
+   "scene": 9,
+   "title": "一句喬年",
+   "status": "writing",
+   "file": "EP051.md"
+  },
+  {
+   "ep": 52,
+   "scene": 9,
+   "title": "相思成疾",
+   "status": "writing",
+   "file": "EP052.md"
+  },
+  {
+   "ep": 53,
+   "scene": 9,
+   "title": "血染衣襟",
+   "status": "writing",
+   "file": "EP053.md"
+  },
+  {
+   "ep": 54,
+   "scene": 9,
+   "title": "燈下無眠",
+   "status": "writing",
+   "file": "EP054.md"
+  },
+  {
+   "ep": 55,
+   "scene": 10,
+   "title": "只要五分鐘",
+   "status": "writing",
+   "file": "EP055.md"
+  },
+  {
+   "ep": 56,
+   "scene": 10,
+   "title": "是不是她？",
+   "status": "writing",
+   "file": "EP056.md"
+  },
+  {
+   "ep": 57,
+   "scene": 10,
+   "title": "那你對我演啊",
+   "status": "writing",
+   "file": "EP057.md"
+  },
+  {
+   "ep": 58,
+   "scene": 10,
+   "title": "我曾經真的愛過",
+   "status": "writing",
+   "file": "EP058.md"
+  },
+  {
+   "ep": 59,
+   "scene": 10,
+   "title": "對不起",
+   "status": "writing",
+   "file": "EP059.md"
+  },
+  {
+   "ep": 60,
+   "scene": 10,
+   "title": "永遠只有兩年",
+   "status": "writing",
+   "file": "EP060.md"
+  },
+  {
+   "ep": 61,
+   "scene": 11,
+   "title": "昏迷三夜",
+   "status": "writing",
+   "file": "EP061.md"
+  },
+  {
+   "ep": 62,
+   "scene": 11,
+   "title": "異僧入府",
+   "status": "writing",
+   "file": "EP062.md"
+  },
+  {
+   "ep": 63,
+   "scene": 11,
+   "title": "以天為名",
+   "status": "writing",
+   "file": "EP063.md"
+  },
+  {
+   "ep": 64,
+   "scene": 11,
+   "title": "救命有方",
+   "status": "writing",
+   "file": "EP064.md"
+  },
+  {
+   "ep": 65,
+   "scene": 11,
+   "title": "一錢心頭肉",
+   "status": "writing",
+   "file": "EP065.md"
+  },
+  {
+   "ep": 66,
+   "scene": 11,
+   "title": "盼得一線生機",
+   "status": "writing",
+   "file": "EP066.md"
+  },
+  {
+   "ep": 67,
+   "scene": 12,
+   "title": "門外苦守",
+   "status": "writing",
+   "file": "EP067.md"
+  },
+  {
+   "ep": 68,
+   "scene": 12,
+   "title": "夢裡驚醒",
+   "status": "writing",
+   "file": "EP068.md"
+  },
+  {
+   "ep": 69,
+   "scene": 12,
+   "title": "二十春，十八春",
+   "status": "writing",
+   "file": "EP069.md"
+  },
+  {
+   "ep": 70,
+   "scene": 12,
+   "title": "等一個消息",
+   "status": "writing",
+   "file": "EP070.md"
+  },
+  {
+   "ep": 71,
+   "scene": 12,
+   "title": "更鼓漸遠",
+   "status": "writing",
+   "file": "EP071.md"
+  },
+  {
+   "ep": 72,
+   "scene": 12,
+   "title": "天明未報",
+   "status": "writing",
+   "file": "EP072.md"
+  },
+  {
+   "ep": 73,
+   "scene": 13,
+   "title": "求心如求藥",
+   "status": "writing",
+   "file": "EP073.md"
+  },
+  {
+   "ep": 74,
+   "scene": 13,
+   "title": "你有沒有熱心",
+   "status": "writing",
+   "file": "EP074.md"
+  },
+  {
+   "ep": 75,
+   "scene": 13,
+   "title": "退婚的代價",
+   "status": "writing",
+   "file": "EP075.md"
+  },
+  {
+   "ep": 76,
+   "scene": 13,
+   "title": "小蝶留人",
+   "status": "writing",
+   "file": "EP076.md"
+  },
+  {
+   "ep": 77,
+   "scene": 13,
+   "title": "他不割，我割",
+   "status": "writing",
+   "file": "EP077.md"
+  },
+  {
+   "ep": 78,
+   "scene": 13,
+   "title": "袈裟與一炷香",
+   "status": "writing",
+   "file": "EP078.md"
+  },
+  {
+   "ep": 79,
+   "scene": 14,
+   "title": "岳父大人",
+   "status": "writing",
+   "file": "EP079.md"
+  },
+  {
+   "ep": 80,
+   "scene": 14,
+   "title": "下月十五",
+   "status": "writing",
+   "file": "EP080.md"
+  },
+  {
+   "ep": 81,
+   "scene": 14,
+   "title": "婚約無證",
+   "status": "writing",
+   "file": "EP081.md"
+  },
+  {
+   "ep": 82,
+   "scene": 14,
+   "title": "十五迎親",
+   "status": "writing",
+   "file": "EP082.md"
+  },
+  {
+   "ep": 83,
+   "scene": 14,
+   "title": "狼人良人",
+   "status": "writing",
+   "file": "EP083.md"
+  },
+  {
+   "ep": 84,
+   "scene": 14,
+   "title": "美麗的錯誤",
+   "status": "writing",
+   "file": "EP084.md"
+  },
+  {
+   "ep": 85,
+   "scene": 15,
+   "title": "小蝶的驚呼",
+   "status": "writing",
+   "file": "EP085.md"
+  },
+  {
+   "ep": 86,
+   "scene": 15,
+   "title": "十八春",
+   "status": "writing",
+   "file": "EP086.md"
+  },
+  {
+   "ep": 87,
+   "scene": 15,
+   "title": "鴛鴦未竟",
+   "status": "writing",
+   "file": "EP087.md"
+  },
+  {
+   "ep": 88,
+   "scene": 15,
+   "title": "爹對不起妳",
+   "status": "writing",
+   "file": "EP088.md"
+  },
+  {
+   "ep": 89,
+   "scene": 15,
+   "title": "香消玉殞",
+   "status": "writing",
+   "file": "EP089.md"
+  },
+  {
+   "ep": 90,
+   "scene": 15,
+   "title": "餘針未收",
+   "status": "writing",
+   "file": "EP090.md"
+  },
+  {
+   "ep": 91,
+   "scene": 16,
+   "title": "上窮碧落",
+   "status": "writing",
+   "file": "EP091.md"
+  },
+  {
+   "ep": 92,
+   "scene": 16,
+   "title": "袈裟護身",
+   "status": "writing",
+   "file": "EP092.md"
+  },
+  {
+   "ep": 93,
+   "scene": 16,
+   "title": "魑魅魍魎",
+   "status": "writing",
+   "file": "EP093.md"
+  },
+  {
+   "ep": 94,
+   "scene": 16,
+   "title": "顧書記",
+   "status": "writing",
+   "file": "EP094.md"
+  },
+  {
+   "ep": 95,
+   "scene": 16,
+   "title": "黃泉相逢",
+   "status": "writing",
+   "file": "EP095.md"
+  },
+  {
+   "ep": 96,
+   "scene": 16,
+   "title": "生死相依",
+   "status": "writing",
+   "file": "EP096.md"
+  },
+  {
+   "ep": 97,
+   "scene": 17,
+   "title": "眾裡尋他千百度",
+   "status": "writing",
+   "file": "EP097.md"
+  },
+  {
+   "ep": 98,
+   "scene": 17,
+   "title": "真的存在嗎",
+   "status": "writing",
+   "file": "EP098.md"
+  },
+  {
+   "ep": 99,
+   "scene": 17,
+   "title": "戲裡的喬年",
+   "status": "writing",
+   "file": "EP099.md"
+  },
+  {
+   "ep": 100,
+   "scene": 17,
+   "title": "曲終人散",
+   "status": "writing",
+   "file": "EP100.md"
+  },
+  {
+   "ep": 101,
+   "scene": 17,
+   "title": "一盞獨燈",
+   "status": "writing",
+   "file": "EP101.md"
+  },
+  {
+   "ep": 102,
+   "scene": 17,
+   "title": "只是虛幻名字",
+   "status": "writing",
+   "file": "EP102.md"
+  },
+  {
+   "ep": 103,
+   "scene": 18,
+   "title": "劉伯彥",
+   "status": "writing",
+   "file": "EP103.md"
+  },
+  {
+   "ep": 104,
+   "scene": 18,
+   "title": "你聽見沒有",
+   "status": "writing",
+   "file": "EP104.md"
+  },
+  {
+   "ep": 105,
+   "scene": 18,
+   "title": "我會等你一輩子",
+   "status": "writing",
+   "file": "EP105.md"
+  },
+  {
+   "ep": 106,
+   "scene": 18,
+   "title": "停在那句話",
+   "status": "writing",
+   "file": "EP106.md"
+  },
+  {
+   "ep": 107,
+   "scene": 18,
+   "title": "燈將熄時",
+   "status": "writing",
+   "file": "EP107.md"
+  },
+  {
+   "ep": 108,
+   "scene": 18,
+   "title": "誓言未了",
+   "status": "writing",
+   "file": "EP108.md"
+  }
+ ]
+}
