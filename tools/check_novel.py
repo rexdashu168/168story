@@ -1,11 +1,14 @@
 """上架前檢查。用法：python tools/check_novel.py   （加 --self-test 驗證檢查本身會不會叫）
 
-檢查：作品清單的圖片都在；每部作品集數連續、場次對得上；標成 ready 的集數正文存在且不是空的；
-正文裡的插圖檔都在；篇名與正文沒有舊人名（V44 已裁定改掉的寫法）；沒有亂碼（U+FFFD）。
+檢查：作品清單的圖片都在；每部作品集數連續；狀態只能是 ready／writing／planned；
+規劃中以外的集數都有標題；標成 ready 的正文存在、不是空的、插圖都在、沒有亂碼；
+公開目錄只准有 ep／era／status／file／title 五個欄位（擋住編輯摘要、內部備註被放上公開站）；
+篇名與正文沒有舊人名（V44 已裁定改掉的寫法）。
 """
 import json, os, re, sys, tempfile, shutil
 
 OLD_NAMES = ['芬嵐', '仲誠', '淑棻', '博彥']
+KEYS = {'ep', 'era', 'status', 'file', 'title'}
 
 def check(root):
     errs = []
@@ -16,17 +19,23 @@ def check(root):
             if not os.path.exists(os.path.join(base, p)):
                 errs.append('%s：圖片不存在 %s' % (w['id'], p))
         d = json.load(open(os.path.join(base, 'episodes.json'), encoding='utf-8'))
-        eps, scenes = d['episodes'], {s['scene'] for s in d['scenes']}
+        eps = d['episodes']
+        if set(d) != {'episodes'}:
+            errs.append('%s：目錄只准有 episodes，多了 %s' % (w['id'], sorted(set(d) - {'episodes'})))
         if [e['ep'] for e in eps] != list(range(1, len(eps) + 1)):
             errs.append('%s：集數不連續' % w['id'])
         for e in eps:
             tag = '%s 第%d集' % (w['id'], e['ep'])
-            if e['scene'] not in scenes:
-                errs.append('%s：場次 %s 不在場次清單' % (tag, e['scene']))
-            if e['status'] not in ('ready', 'writing'):
-                errs.append('%s：狀態只能是 ready 或 writing，現在是 %s' % (tag, e['status']))
+            if set(e) - KEYS:
+                errs.append('%s：公開目錄出現不該有的欄位 %s' % (tag, sorted(set(e) - KEYS)))
+            if e['status'] not in ('ready', 'writing', 'planned'):
+                errs.append('%s：狀態只能是 ready／writing／planned，現在是 %s' % (tag, e['status']))
+            if e.get('era') not in ('1998', '古代'):
+                errs.append('%s：era 只能是 1998 或 古代' % tag)
+            if e['status'] != 'planned' and not e.get('title'):
+                errs.append('%s：沒有標題' % tag)
             for n in OLD_NAMES:
-                if n in e['title']:
+                if n in e.get('title', ''):
                     errs.append('%s：篇名有舊人名「%s」' % (tag, n))
             if e['status'] != 'ready':
                 continue
@@ -58,13 +67,16 @@ def self_test(root):
         d = json.load(open(p, encoding='utf-8'))
         d['episodes'][0]['status'] = 'ready'              # 壞案例一：ready 但沒有正文
         d['episodes'][1]['title'] = '芬嵐的長笛'            # 壞案例二：舊人名
+        d['episodes'][2]['note'] = '內部摘要'               # 壞案例四：內部欄位跑進公開目錄
+        d['episodes'][3]['status'] = 'draft'               # 壞案例五：私人預覽的狀態跑進公開目錄
         json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False)
         errs, _ = check(t)
-        assert any('找不到正文' in e for e in errs) and any('舊人名' in e for e in errs), errs
+        for k in ('找不到正文', '舊人名', '不該有的欄位', '狀態只能是'):
+            assert any(k in e for e in errs), (k, errs)
         open(os.path.join(t, 'works', 'liancheng', 'chapters', d['episodes'][0]['file']), 'w', encoding='utf-8').write('正文。\n\n![圖](不存在.jpg)\n')
         errs, _ = check(t)                                 # 壞案例三：插圖不存在
         assert any('插圖不存在' in e for e in errs) and not any('找不到正文' in e for e in errs), errs
-        print('自我測試通過：正常的網站放行，三種壞案例都有叫')
+        print('自我測試通過：正常的網站放行，六種壞案例都有叫')
     finally:
         shutil.rmtree(tmp)
 
