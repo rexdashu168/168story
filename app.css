@@ -132,6 +132,9 @@ a{color:inherit;text-decoration:none}
 .rbar{position:sticky;top:50px;z-index:5;height:2px;background:transparent}
 .rbar i{display:block;height:100%;width:0;background:var(--gold)}
 .ic{width:40px;height:40px;border-radius:20px;font-size:20px;color:var(--rtx)}
+.epimg{margin:0}
+.epimg img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.epimg+.rhead{padding-top:22px}
 .rhead{padding:34px 22px 10px;text-align:center}
 .rhead .sc{font-size:13px;color:var(--rsub);letter-spacing:2px}
 .rhead h2{font-family:var(--serif);font-size:26px;margin:10px 0 0;letter-spacing:2px;line-height:1.4}
