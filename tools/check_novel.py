@@ -49,6 +49,9 @@ def check(root):
             for pc in e.get('pics', []):   # 正文插圖：圖要存在、要接在正文裡找得到的那段文字後面
                 if not os.path.exists(os.path.join(base, pc.get('img', ''))):
                     errs.append('%s：插圖不存在 %s' % (tag, pc.get('img')))
+                for line in pc.get('poem', []):   # 題畫詩每一句都要是正文裡的原句（不計標點）
+                    if re.sub(r'[，。、！？…「」]', '', line) not in re.sub(r'[，。、！？…「」\s]', '', t):
+                        errs.append('%s：插圖上的詩句在正文裡找不到「%s」' % (tag, line))
                 if not pc.get('after') or pc['after'] not in t:
                     errs.append('%s：插圖的位置文字在正文裡找不到「%s」' % (tag, pc.get('after')))
             if not t.strip():

@@ -192,7 +192,7 @@ function reader(w,n){
     body.querySelectorAll('.gal').forEach(gal);
     (e.pics||[]).forEach(function(pc){   // 正文插圖：放在含有指定文字的那一段後面（插圖另外存，正文從 Drive 更新也不會被蓋掉）
       var ps=body.querySelectorAll('p');for(var i=0;i<ps.length;i++){if(ps[i].textContent.indexOf(pc.after)>=0){
-        var f=document.createElement('figure');f.className='pic';f.innerHTML='<img src="'+esc(wimg(w,pc.img))+'" alt="" loading="lazy">';
+        var f=document.createElement('figure');f.className='pic';f.innerHTML='<img src="'+esc(wimg(w,pc.img))+'" alt="" loading="lazy">'+(pc.poem?'<div class="vp'+(pc.dark?' dk':'')+(pc.bg?' bg':'')+'" style="'+(pc.side==='left'?'left':'right')+':'+(pc.x||4)+'%;top:'+(pc.y||7)+'%">'+pc.poem.map(esc).join('<br>')+'</div>':'');   // 題畫詩：網站疊字，圖本身無字
         ps[i].parentNode.insertBefore(f,ps[i].nextSibling);break}}
     });
     var r=store.get(key,0);   // 回到上次讀到的位置
