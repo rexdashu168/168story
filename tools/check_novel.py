@@ -8,7 +8,7 @@
 import json, os, re, sys, tempfile, shutil
 
 OLD_NAMES = ['芬嵐', '仲誠', '淑棻', '博彥']
-KEYS = {'ep', 'era', 'status', 'file', 'title', 'img', 'pics', 'audio'}   # img：每集主圖，路徑相對於作品資料夾；audio：聲音檔名（不含副檔名）
+KEYS = {'ep', 'era', 'status', 'file', 'title', 'img', 'pics', 'audio', 'script'}   # script：1998 演出原稿 {top:[...], end:[...]}，讀完 scriptUnlock 那一集才顯示   # img：每集主圖，路徑相對於作品資料夾；audio：聲音檔名（不含副檔名）
 
 def check(root):
     errs = []
@@ -41,6 +41,12 @@ def check(root):
                 errs.append('%s：有聲音檔，但作品清單沒有正確的聲音檔網址（https:// 開頭、/ 結尾）' % tag)
             if e.get('img') and not os.path.exists(os.path.join(base, e['img'])):
                 errs.append('%s：主圖不存在 %s' % (tag, e['img']))
+            for pos, L in (e.get('script') or {}).items():
+                if pos not in ('top', 'end'):
+                    errs.append('%s：原稿位置只能是 top 或 end，現在是 %s' % (tag, pos))
+                for p in L:
+                    if not os.path.exists(os.path.join(base, p)):
+                        errs.append('%s：原稿圖片不存在 %s' % (tag, p))
             if e['status'] != 'ready':
                 continue
             f = os.path.join(base, 'chapters', e['file'])

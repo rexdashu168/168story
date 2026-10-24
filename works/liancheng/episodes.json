@@ -44,7 +44,12 @@
      "after": "他想知道的是，芬蘭的心裡，是不是已經沒有他了。",
      "img": "img/pic/EP002_375.jpg"
     }
-   ]
+   ],
+   "script": {
+    "top": [
+     "chapters/script/01.jpg"
+    ]
+   }
   },
   {
    "ep": 2,
@@ -112,7 +117,12 @@
      "after": "仲承聽著那些熟悉的聲音，伸手推開門。",
      "img": "img/pic/EP006_389.jpg"
     }
-   ]
+   ],
+   "script": {
+    "end": [
+     "chapters/script/02.jpg"
+    ]
+   }
   },
   {
    "ep": 4,

@@ -209,3 +209,10 @@ body.ttson .ttsfab{display:none}
 .ttsbar .tx{font-size:14px;color:var(--sub);padding:0 6px}
 body.ttson .rnav{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 body.ttson .toast{bottom:calc(124px + env(safe-area-inset-bottom))}
+/* 1998 演出原稿：四周淡出，像舊紙放在桌上 */
+.yuan{margin:34px 0 8px;text-align:center}
+.yuan .ycap{font-size:12px;letter-spacing:.3em;color:var(--sub);margin-bottom:10px}
+.yuan figure{margin:0}
+.yuan img{display:block;width:100%;border-radius:0;-webkit-mask-image:radial-gradient(ellipse at center,#000 58%,transparent 99%);mask-image:radial-gradient(ellipse at center,#000 58%,transparent 99%)}
+.yuan .gal{margin:0 -22px}
+.yuan .gtr figure img{box-shadow:none;border-radius:0}

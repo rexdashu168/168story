@@ -203,6 +203,13 @@ function reader(w,n){
         var f=document.createElement('figure');f.className='pic';f.innerHTML='<img src="'+esc(wimg(w,pc.img))+'" alt="" loading="lazy">'+(pc.poem?'<div class="vp'+(pc.dark?' dk':'')+(pc.bg?' bg':'')+'" style="'+(pc.side==='left'?'left':'right')+':'+(pc.x||4)+'%;top:'+(pc.y||7)+'%">'+pc.poem.map(function(l){return'<span>'+esc(l)+'</span>'}).join('')+'</div>':'');   // 題畫詩：網站疊字，圖本身無字
         ps[i].parentNode.insertBefore(f,ps[i].nextSibling);var im=f.querySelector('img');im.onload=vpSize;break}}
     });
+    if(e.script&&w.scriptUnlock&&readSet(w.id).indexOf(w.scriptUnlock)>=0){   // 1998 演出原稿：讀完謝幕那一集才出現，第一次讀的人看不到，不劇透
+      ['top','end'].forEach(function(pos){var L=e.script[pos];if(!L||!L.length)return;
+        var el=document.createElement('div');el.className='yuan';
+        el.innerHTML='<div class="ycap">1998 演出原稿</div>'+(L.length>1?'<div class="gal"><div class="gtr">'+L.map(function(p){return'<figure><img src="'+esc(wimg(w,p))+'" alt="" loading="lazy"></figure>'}).join('')+'</div><div class="gdots">'+L.map(function(){return'<i></i>'}).join('')+'</div></div>':'<figure><img src="'+esc(wimg(w,L[0]))+'" alt="" loading="lazy"></figure>');
+        if(pos==='top')body.insertBefore(el,body.firstChild);else body.appendChild(el);
+        el.querySelectorAll('.gal').forEach(gal)});
+    }
     var r=store.get(key,0);   // 回到上次讀到的位置
     setTimeout(function(){
       if(r>0.02&&r<0.95)scrollTo(0,r*(document.documentElement.scrollHeight-innerHeight));
