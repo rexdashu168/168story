@@ -196,7 +196,13 @@
    "era": "1998",
    "status": "ready",
    "file": "EP012.md",
-   "title": "聽說她和伯彥對戲對出真感情？"
+   "title": "聽說她和伯彥對戲對出真感情？",
+   "script": {
+    "end": [
+     "chapters/script/03.jpg",
+     "chapters/script/04.jpg"
+    ]
+   }
   },
   {
    "ep": 13,
@@ -210,7 +216,12 @@
    "era": "古代",
    "status": "ready",
    "file": "EP014.md",
-   "title": "二十歲那年，妳得永遠回來"
+   "title": "二十歲那年，妳得永遠回來",
+   "script": {
+    "end": [
+     "chapters/script/05.jpg"
+    ]
+   }
   },
   {
    "ep": 15,
@@ -238,7 +249,13 @@
    "era": "古代",
    "status": "ready",
    "file": "EP018.md",
-   "title": "想娶她？先猜畫中人在想什麼"
+   "title": "想娶她？先猜畫中人在想什麼",
+   "script": {
+    "end": [
+     "chapters/script/06.jpg",
+     "chapters/script/07.jpg"
+    ]
+   }
   },
   {
    "ep": 19,
@@ -258,7 +275,12 @@
      "x": 61,
      "y": 3
     }
-   ]
+   ],
+   "script": {
+    "end": [
+     "chapters/script/08.jpg"
+    ]
+   }
   },
   {
    "ep": 20,
@@ -302,7 +324,12 @@
    "era": "古代",
    "status": "ready",
    "file": "EP023.md",
-   "title": "「這件事，先別讓爹爹知道」"
+   "title": "「這件事，先別讓爹爹知道」",
+   "script": {
+    "end": [
+     "chapters/script/09.jpg"
+    ]
+   }
   },
   {
    "ep": 24,
@@ -338,7 +365,12 @@
      "x": 2,
      "y": 5
     }
-   ]
+   ],
+   "script": {
+    "end": [
+     "chapters/script/10.jpg"
+    ]
+   }
   },
   {
    "ep": 27,
@@ -366,7 +398,12 @@
    "era": "古代",
    "status": "ready",
    "file": "EP030.md",
-   "title": "那句話到了唇邊，她會說嗎？"
+   "title": "那句話到了唇邊，她會說嗎？",
+   "script": {
+    "end": [
+     "chapters/script/11.jpg"
+    ]
+   }
   },
   {
    "ep": 31,
@@ -394,7 +431,12 @@
    "era": "古代",
    "status": "ready",
    "file": "EP034.md",
-   "title": "那條帕子，她悄悄藏進枕邊"
+   "title": "那條帕子，她悄悄藏進枕邊",
+   "script": {
+    "end": [
+     "chapters/script/12.jpg"
+    ]
+   }
   },
   {
    "ep": 35,
@@ -415,7 +457,12 @@
    "era": "1998",
    "status": "ready",
    "file": "EP037.md",
-   "title": "「你是不是要跟我分手？」"
+   "title": "「你是不是要跟我分手？」",
+   "script": {
+    "end": [
+     "chapters/script/13.jpg"
+    ]
+   }
   },
   {
    "ep": 38,
@@ -450,7 +497,12 @@
    "era": "古代",
    "status": "ready",
    "file": "EP042.md",
-   "title": "頭陀說有救，但藥引是……"
+   "title": "頭陀說有救，但藥引是……",
+   "script": {
+    "end": [
+     "chapters/script/14.jpg"
+    ]
+   }
   },
   {
    "ep": 43,
@@ -485,7 +537,12 @@
    "era": "古代",
    "status": "ready",
    "file": "EP047.md",
-   "title": "替她受苦？窮書生說：我願意"
+   "title": "替她受苦？窮書生說：我願意",
+   "script": {
+    "end": [
+     "chapters/script/15.jpg"
+    ]
+   }
   },
   {
    "ep": 48,
@@ -541,7 +598,13 @@
    "era": "古代",
    "status": "ready",
    "file": "EP055.md",
-   "title": "一炷香燒完前，你還能反悔"
+   "title": "一炷香燒完前，你還能反悔",
+   "script": {
+    "end": [
+     "chapters/script/16.jpg",
+     "chapters/script/17.jpg"
+    ]
+   }
   },
   {
    "ep": 56,
@@ -569,7 +632,12 @@
    "era": "古代",
    "status": "ready",
    "file": "EP059.md",
-   "title": "她病得說不出話，你卻談條件？"
+   "title": "她病得說不出話，你卻談條件？",
+   "script": {
+    "end": [
+     "chapters/script/18.jpg"
+    ]
+   }
   },
   {
    "ep": 60,
@@ -611,7 +679,12 @@
    "era": "古代",
    "status": "ready",
    "file": "EP065.md",
-   "title": "病成這樣，她還惦記爹吃飯沒"
+   "title": "病成這樣，她還惦記爹吃飯沒",
+   "script": {
+    "end": [
+     "chapters/script/19.jpg"
+    ]
+   }
   },
   {
    "ep": 66,
@@ -639,7 +712,13 @@
    "era": "古代",
    "status": "ready",
    "file": "EP069.md",
-   "title": "黃泉之下：我們還要做夫妻"
+   "title": "黃泉之下：我們還要做夫妻",
+   "script": {
+    "end": [
+     "chapters/script/20.jpg",
+     "chapters/script/21.jpg"
+    ]
+   }
   },
   {
    "ep": 70,
@@ -717,7 +796,12 @@
      "y": 8,
      "dark": true
     }
-   ]
+   ],
+   "script": {
+    "end": [
+     "chapters/script/22.jpg"
+    ]
+   }
   },
   {
    "ep": 79,
@@ -730,7 +814,12 @@
      "after": "她一個人，在整個舞台上盡情地飛舞。",
      "img": "img/pic/EP079_v2.jpg"
     }
-   ]
+   ],
+   "script": {
+    "end": [
+     "chapters/script/23.jpg"
+    ]
+   }
   },
   {
    "ep": 80,
