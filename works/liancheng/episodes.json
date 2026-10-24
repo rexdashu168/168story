@@ -62,7 +62,25 @@
    "status": "ready",
    "file": "EP003.md",
    "title": "我哪一點比不上劉伯彥？",
-   "img": "img/ep/EP003.jpg"
+   "img": "img/ep/EP003.jpg",
+   "pics": [
+    {
+     "after": "沒想到半個鐘頭後，仲承竟然提著一袋東西出現在她門口。",
+     "img": "img/pic/EP003_082.jpg"
+    },
+    {
+     "after": "他把手裡的長笛盒放到身旁，抬頭望著她。",
+     "img": "img/pic/EP003_211.jpg"
+    },
+    {
+     "after": "他說完，還真的把背包放到地上，假裝準備睡覺。",
+     "img": "img/pic/EP003_306.jpg"
+    },
+    {
+     "after": "這一次，他沒有催她。",
+     "img": "img/pic/EP003_381.jpg"
+    }
+   ]
   },
   {
    "ep": 4,
