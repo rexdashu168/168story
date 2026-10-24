@@ -142,7 +142,22 @@
    "era": "1998",
    "status": "ready",
    "file": "EP007.md",
-   "title": "明天公演，他的戲服不見了！"
+   "title": "明天公演，他的戲服不見了！",
+   "img": "img/ep/EP007.jpg",
+   "pics": [
+    {
+     "after": "導演懶得理他，蹲下去把舊膠帶撕掉。",
+     "img": "img/pic/EP007_135.jpg"
+    },
+    {
+     "after": "他把盒子安置在角落，沒有再打開。",
+     "img": "img/pic/EP007_191.jpg"
+    },
+    {
+     "after": "伯彥偷偷往旁邊退了一步。",
+     "img": "img/pic/EP007_322.jpg"
+    }
+   ]
   },
   {
    "ep": 8,
