@@ -337,8 +337,22 @@
    "era": "古代",
    "status": "ready",
    "file": "EP014.md",
-   "img": "img/ep/EP014_封面_v1_20261024.jpg",
+   "img": "img/ep/EP014_封面_v2_20261024.jpg",
    "title": "二十歲那年，妳得永遠回來",
+   "pics": [
+    {
+     "after": "你憑什麼主宰我的生命？除非你是閻羅王！",
+     "img": "img/pic/EP014_閻羅王_20261024.jpg"
+    },
+    {
+     "after": "連城摀住耳朵。",
+     "img": "img/pic/EP014_摀耳_20261024.jpg"
+    },
+    {
+     "after": "連城伸出手，看見自己的指尖有了清楚的形狀。",
+     "img": "img/pic/EP014_指尖_20261024.jpg"
+    }
+   ],
    "script": {
     "end": [
      "chapters/script/05.jpg"
