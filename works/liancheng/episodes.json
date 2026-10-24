@@ -5,7 +5,7 @@
    "era": "1998",
    "status": "ready",
    "file": "EP001.md",
-   "title": "那首曲子",
+   "title": "「一切都變了」他卻偏要吹",
    "img": "img/ep/EP001.jpg",
    "pics": [
     {
@@ -51,8 +51,8 @@
    "era": "1998",
    "status": "ready",
    "file": "EP002.md",
-   "title": "我們完了",
-   "img": "img/ep/EP004.jpg",
+   "title": "我哪一點比不上劉伯彥？",
+   "img": "img/ep/EP005.jpg",
    "pics": [
     {
      "after": "沒想到半個鐘頭後，仲承竟然提著一袋東西出現在她門口。",
@@ -81,7 +81,7 @@
    "era": "1998",
    "status": "ready",
    "file": "EP003.md",
-   "title": "放手",
+   "title": "「你就像當時不肯放手的我」",
    "img": "img/ep/EP003.jpg",
    "pics": [
     {
@@ -119,23 +119,21 @@
    "era": "1998",
    "status": "ready",
    "file": "EP004.md",
-   "title": "招募單",
-   "img": "img/ep/EP005.jpg"
+   "title": "一張招募單，她成了連城"
   },
   {
    "ep": 5,
    "era": "1998",
    "status": "ready",
    "file": "EP005.md",
-   "title": "對戲",
-   "img": "img/ep/EP006.jpg"
+   "title": "演戲的時候，你在看什麼？"
   },
   {
    "ep": 6,
    "era": "1998",
    "status": "ready",
    "file": "EP006.md",
-   "title": "兩個麵包"
+   "title": "「等我忙完」，她等了三個月"
   },
   {
    "ep": 7,
