@@ -5,7 +5,7 @@
    "era": "1998",
    "status": "ready",
    "file": "EP001.md",
-   "title": "「一切都變了」他卻偏要吹",
+   "title": "那首曲子",
    "img": "img/ep/EP001.jpg",
    "pics": [
     {
@@ -27,24 +27,14 @@
     {
      "after": "但也沒有打算離開。",
      "img": "img/pic/EP001_6.jpg"
-    }
-   ]
-  },
-  {
-   "ep": 2,
-   "era": "1998",
-   "status": "ready",
-   "file": "EP002.md",
-   "title": "跟我在一起，妳不快樂了？",
-   "img": "img/ep/EP002.jpg",
-   "pics": [
-    {
-     "after": "芬蘭笑得前仰後合。",
-     "img": "img/pic/EP002_1.jpg"
     },
     {
      "after": "她接過樂譜，看見其中一小節旁邊有個歪歪扭扭的笑臉，忍不住笑了。",
      "img": "img/pic/EP002_037.jpg"
+    },
+    {
+     "after": "芬蘭笑得前仰後合。",
+     "img": "img/pic/EP002_1.jpg"
     },
     {
      "after": "仲承趁她笑的時候，輕輕拉住她的手。",
@@ -57,12 +47,12 @@
    ]
   },
   {
-   "ep": 3,
+   "ep": 2,
    "era": "1998",
    "status": "ready",
-   "file": "EP003.md",
-   "title": "我哪一點比不上劉伯彥？",
-   "img": "img/ep/EP003.jpg",
+   "file": "EP002.md",
+   "title": "我們完了",
+   "img": "img/ep/EP004.jpg",
    "pics": [
     {
      "after": "沒想到半個鐘頭後，仲承竟然提著一袋東西出現在她門口。",
@@ -79,39 +69,29 @@
     {
      "after": "這一次，他沒有催她。",
      "img": "img/pic/EP003_381.jpg"
+    },
+    {
+     "after": "她每天替小不點換水，清理籠子，也會把鳥籠移到有陽光、卻不會曬得太熱的地方。天氣轉涼時，她擔心牠冷，還找來一塊舊布，晚上替籠子擋風。",
+     "img": "img/pic/EP004_096.jpg"
     }
    ]
   },
   {
-   "ep": 4,
+   "ep": 3,
    "era": "1998",
    "status": "ready",
-   "file": "EP004.md",
-   "title": "是擔心牠，還是捨不得牠？",
-   "img": "img/ep/EP004.jpg",
+   "file": "EP003.md",
+   "title": "放手",
+   "img": "img/ep/EP003.jpg",
    "pics": [
-    {
-     "after": "她每天替小不點換水，清理籠子，也會把鳥籠移到有陽光、卻不會曬得太熱的地方。天氣轉涼時，她擔心牠冷，還找來一塊舊布，晚上替籠子擋風。",
-     "img": "img/pic/EP004_096.jpg"
-    },
     {
      "after": "那個小小的身體，已經沒有了往日的溫度。",
      "img": "img/pic/EP004_247_v2.jpg"
     },
     {
-     "after": "可是眼前的仲承，仍然靜靜地等著她把故事說完。",
+     "after": "仲承望著她，隱約覺得這個故事並不只是關於一隻鳥。",
      "img": "img/pic/EP004_355.jpg"
-    }
-   ]
-  },
-  {
-   "ep": 5,
-   "era": "1998",
-   "status": "ready",
-   "file": "EP005.md",
-   "title": "「你就像當時不肯放手的我」",
-   "img": "img/ep/EP005.jpg",
-   "pics": [
+    },
     {
      "after": "最後是芬蘭自己笑出來，說她並不是不需要他的意見，只是希望有時候能自己決定。",
      "img": "img/pic/EP005_163.jpg"
@@ -119,17 +99,7 @@
     {
      "after": "仲承低下頭，用拇指慢慢摩擦著長笛盒的提把。",
      "img": "img/pic/EP005_300.jpg"
-    }
-   ]
-  },
-  {
-   "ep": 6,
-   "era": "1998",
-   "status": "ready",
-   "file": "EP006.md",
-   "title": "「那如果我想抱妳呢？」",
-   "img": "img/ep/EP006.jpg",
-   "pics": [
+    },
     {
      "after": "後來每次走到馬路邊，仲承還是會很自然地換到外側。久而久之，她也習慣了。",
      "img": "img/pic/EP006_126.jpg"
@@ -143,6 +113,29 @@
      "img": "img/pic/EP006_389.jpg"
     }
    ]
+  },
+  {
+   "ep": 4,
+   "era": "1998",
+   "status": "ready",
+   "file": "EP004.md",
+   "title": "招募單",
+   "img": "img/ep/EP005.jpg"
+  },
+  {
+   "ep": 5,
+   "era": "1998",
+   "status": "ready",
+   "file": "EP005.md",
+   "title": "對戲",
+   "img": "img/ep/EP006.jpg"
+  },
+  {
+   "ep": 6,
+   "era": "1998",
+   "status": "ready",
+   "file": "EP006.md",
+   "title": "兩個麵包"
   },
   {
    "ep": 7,
