@@ -19,6 +19,8 @@ function zh(n){var d='零一二三四五六七八九';if(n<=10)return n===10?'�
 function src(p){return PRE&&PRE.img[p]?PRE.img[p]:p}
 function wbase(w){return'works/'+w.id+'/'}
 function wimg(w,p){return src(wbase(w)+p)}
+function picTag(w,p,attrs){var b=p.replace(/\.jpg$/,'');   // 手機（720px 以下）讀 640 寬 WebP，其他讀 1280 寬 WebP，JPG 當後備
+  return'<picture><source type="image/webp" media="(max-width: 720px)" srcset="'+esc(wimg(w,b+'_640.webp'))+'"><source type="image/webp" srcset="'+esc(wimg(w,b+'.webp'))+'"><img src="'+esc(wimg(w,p))+'" alt="" '+attrs+'></picture>'}
 function work(id){for(var i=0;i<WORKS.length;i++)if(WORKS[i].id===id)return WORKS[i];return null}
 function ready(e){return e.status==='ready'||e.status==='draft'}   // draft 只會出現在私人預覽檔
 function tt(e){return e.status==='planned'?'規劃中':e.title}
@@ -169,7 +171,7 @@ function reader(w,n){
   app.innerHTML='<div class="reader '+set.theme+(fab?' hasfab':'')+'" style="--fs:'+FS[set.fs]+'px">'+
    '<div class="rtop"><button class="ic" data-go="#/w/'+w.id+'" aria-label="回作品頁">‹</button><div class="t">第 '+n+' 集　'+esc(tt(e))+'</div><button class="ic" id="aa" aria-label="閱讀設定" style="font-size:16px">Aa</button></div>'+
    '<div class="rbar"><i id="rbar"></i></div>'+
-   (e.img?'<figure class="epimg"><img src="'+esc(wimg(w,e.img))+'" alt=""></figure>':'')+'<div class="rhead"><div class="sc">'+eraName(e)+'・第 '+n+' 集</div><h2>'+esc(tt(e))+'</h2><div class="orn">◆ ◆ ◆</div></div>'+(e.status==='draft'?'<div class="draftnote">舊版備份，尚未經作者核定，只在私人預覽檔出現，不會公開。</div>':'')+
+   (e.img?'<figure class="epimg">'+picTag(w,e.img,'')+'</figure>':'')+'<div class="rhead"><div class="sc">'+eraName(e)+'・第 '+n+' 集</div><h2>'+esc(tt(e))+'</h2><div class="orn">◆ ◆ ◆</div></div>'+(e.status==='draft'?'<div class="draftnote">舊版備份，尚未經作者核定，只在私人預覽檔出現，不會公開。</div>':'')+
    '<div id="body"></div>'+
    '<div class="endcard"><div class="e1">第 '+n+' 集　完</div><div class="e2">'+(nx?'下一集：'+esc(tt(nx)):'全書完')+'</div></div>'+
    '<div class="rnav"><button id="prev"'+(n>1?'':' disabled')+'>‹ 上一集</button><button id="list">選集</button><button id="next"'+(nx?'':' disabled')+'>下一集 ›</button></div>'+
@@ -200,7 +202,7 @@ function reader(w,n){
     setTimeout(vpSize,0);
     (e.pics||[]).forEach(function(pc){   // 正文插圖：放在含有指定文字的那一段後面（插圖另外存，正文從 Drive 更新也不會被蓋掉）
       var ps=body.querySelectorAll('p');for(var i=0;i<ps.length;i++){if(ps[i].textContent.indexOf(pc.after)>=0){
-        var f=document.createElement('figure');f.className='pic';f.innerHTML='<img src="'+esc(wimg(w,pc.img))+'" alt="" loading="lazy">'+(pc.poem?'<div class="vp'+(pc.dark?' dk':'')+(pc.bg?' bg':'')+'" style="'+(pc.side==='left'?'left':'right')+':'+(pc.x||4)+'%;top:'+(pc.y||7)+'%">'+pc.poem.map(function(l){return'<span>'+esc(l)+'</span>'}).join('')+'</div>':'');   // 題畫詩：網站疊字，圖本身無字
+        var f=document.createElement('figure');f.className='pic';f.innerHTML=picTag(w,pc.img,'loading="lazy"')+(pc.poem?'<div class="vp'+(pc.dark?' dk':'')+(pc.bg?' bg':'')+'" style="'+(pc.side==='left'?'left':'right')+':'+(pc.x||4)+'%;top:'+(pc.y||7)+'%">'+pc.poem.map(function(l){return'<span>'+esc(l)+'</span>'}).join('')+'</div>':'');   // 題畫詩：網站疊字，圖本身無字
         ps[i].parentNode.insertBefore(f,ps[i].nextSibling);var im=f.querySelector('img');im.onload=vpSize;break}}
     });
     if(e.script&&w.scriptUnlock&&readSet(w.id).indexOf(w.scriptUnlock)>=0){   // 1998 演出原稿：讀完謝幕那一集才出現，第一次讀的人看不到，不劇透
