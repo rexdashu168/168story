@@ -554,6 +554,29 @@
    "status": "ready",
    "file": "EP023.md",
    "title": "「這件事，先別讓爹爹知道」",
+   "img": "img/ep/EP023_封面_20261025.jpg",
+   "pics": [
+    {
+     "after": "妳說，我若病了怎麼辦。",
+     "img": "img/pic/EP023_我若病了_20261025.jpg"
+    },
+    {
+     "after": "嬤嬤提著帳冊進來，先看見桌上的繡花針，再看見那根被連城當成針的髮簪。",
+     "img": "img/pic/EP023_帳冊進門_20261025.jpg"
+    },
+    {
+     "after": "「拿得出來。」",
+     "img": "img/pic/EP023_拿得出來_20261025.jpg"
+    },
+    {
+     "after": "這件事，先不要讓爹爹知道。",
+     "img": "img/pic/EP023_先不要讓爹爹知道_20261025.jpg"
+    },
+    {
+     "after": "這回我幫妳。",
+     "img": "img/pic/EP023_這回我幫妳_20261025.jpg"
+    }
+   ],
    "script": {
     "end": [
      "chapters/script/09.jpg"
