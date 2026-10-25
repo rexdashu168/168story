@@ -199,9 +199,10 @@ function reader(w,n){
     body.querySelectorAll('.gal').forEach(gal);
     setTimeout(vpSize,0);
     (e.pics||[]).forEach(function(pc){   // 正文插圖：放在含有指定文字的那一段後面（插圖另外存，正文從 Drive 更新也不會被蓋掉）
-      var ps=body.querySelectorAll('p');for(var i=0;i<ps.length;i++){if(ps[i].textContent.indexOf(pc.after)>=0){
+      var hit=false;var ps=body.querySelectorAll('p');for(var i=0;i<ps.length;i++){if(ps[i].textContent.indexOf(pc.after)>=0){hit=true;
         var f=document.createElement('figure');f.className='pic';f.innerHTML='<img src="'+esc(wimg(w,pc.img))+'" alt="" loading="lazy">'+(pc.poem?'<div class="vp'+(pc.dark?' dk':'')+(pc.bg?' bg':'')+'" style="'+(pc.side==='left'?'left':'right')+':'+(pc.x||4)+'%;top:'+(pc.y||7)+'%">'+pc.poem.map(function(l){return'<span>'+esc(l)+'</span>'}).join('')+'</div>':'');   // 題畫詩：網站疊字，圖本身無字
         ps[i].parentNode.insertBefore(f,ps[i].nextSibling);var im=f.querySelector('img');im.onload=vpSize;break}}
+      if(!hit&&window.console)console.warn('插圖找不到接點，沒有顯示：'+pc.img+'（'+pc.after+'）');   // 錨點文字找不到時要留下紀錄，不能靜默
     });
     if(e.script&&w.scriptUnlock&&readSet(w.id).indexOf(w.scriptUnlock)>=0){   // 1998 演出原稿：讀完謝幕那一集才出現，第一次讀的人看不到，不劇透
       ['top','end'].forEach(function(pos){var L=e.script[pos];if(!L||!L.length)return;

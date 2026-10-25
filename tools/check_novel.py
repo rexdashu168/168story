@@ -60,8 +60,14 @@ def check(root):
                 for line in pc.get('poem', []):   # 題畫詩每一句都要是正文裡的原句（不計標點）
                     if re.sub(r'[，。、！？…「」]', '', line) not in re.sub(r'[，。、！？…「」\s]', '', t):
                         errs.append('%s：插圖上的詩句在正文裡找不到「%s」' % (tag, line))
-                if not pc.get('after') or pc['after'] not in t:
-                    errs.append('%s：插圖的位置文字在正文裡找不到「%s」' % (tag, pc.get('after')))
+                if not pc.get('after'):
+                    errs.append('%s：插圖沒有位置文字（after）' % tag)
+                else:   # 網站是把圖接在「第一個」含這段文字的段落後面，所以要恰好一段，0 段是找不到，2 段以上會接錯地方
+                    hits = sum(1 for para in re.split(r'\n\s*\n', t) if pc['after'] in para)
+                    if hits == 0:
+                        errs.append('%s：插圖的位置文字在正文裡找不到「%s」' % (tag, pc['after']))
+                    elif hits > 1:
+                        errs.append('%s：插圖的位置文字在正文裡出現 %d 段，圖會接到第一段後面：「%s」' % (tag, hits, pc['after']))
             if not t.strip():
                 errs.append('%s：正文是空的' % tag)
             if '�' in t:
@@ -101,7 +107,16 @@ def self_test(root):
         open(os.path.join(t, 'works', 'liancheng', 'chapters', d['episodes'][w[0]]['file']), 'w', encoding='utf-8').write('正文。\n\n![圖](不存在.jpg)\n')
         errs, _ = check(t)                                 # 壞案例三：插圖不存在
         assert any('插圖不存在' in e for e in errs) and not any('找不到正文' in e for e in errs), errs
-        print('自我測試通過：正常的網站放行，八種壞案例都有叫')
+        open(os.path.join(t, 'works', 'liancheng', 'chapters', d['episodes'][w[0]]['file']), 'w', encoding='utf-8').write('一句話。\n\n另一段。\n\n一句話。\n')
+        d['episodes'][w[0]]['pics'] = [{'after': '一句話。', 'img': 'img/pic/不存在.jpg'}]
+        json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False)
+        errs, _ = check(t)                                 # 壞案例九：錨點出現兩段，圖會接錯地方
+        assert any('出現 2 段' in e for e in errs), errs
+        d['episodes'][w[0]]['pics'] = [{'after': '不在正文的字。', 'img': 'img/pic/不存在.jpg'}]
+        json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False)
+        errs, _ = check(t)                                 # 壞案例十：錨點完全找不到，圖會消失
+        assert any('找不到' in e and '不在正文的字' in e for e in errs), errs
+        print('自我測試通過：正常的網站放行，新增的錨點壞案例（重複、找不到）也都有叫')
     finally:
         shutil.rmtree(tmp)
 
