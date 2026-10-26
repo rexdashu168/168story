@@ -651,6 +651,10 @@
    "title": "「百無一用是書生哪！」",
    "pics": [
     {
+     "after": "他望著「願代受」三個字，忽然覺得自己有些可笑。",
+     "img": "img/pic/EP026_願代受_20261026b.jpg"
+    },
+    {
      "after": "他慢慢將四句詩讀出聲來。",
      "img": "img/pic/EP026_v4.jpg",
      "poem": [
@@ -662,13 +666,26 @@
      "side": "right",
      "x": 2,
      "y": 5
+    },
+    {
+     "after": "喬年端起酒杯，又倒了一點酒。",
+     "img": "img/pic/EP026_倒酒_20261026b.jpg"
+    },
+    {
+     "after": "哈哈哈！",
+     "img": "img/pic/EP026_哈哈哈_20261026b.jpg"
+    },
+    {
+     "after": "那只接水的陶碗，竟又接住了一滴水。",
+     "img": "img/pic/EP026_陶碗滴水_20261026b.jpg"
     }
    ],
    "script": {
     "end": [
      "chapters/script/10.jpg"
     ]
-   }
+   },
+   "img": "img/ep/EP026_封面_抬頭苦笑_20261026b.jpg"
   },
   {
    "ep": 27,
