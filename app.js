@@ -89,8 +89,7 @@ function home(){
     var h='<div class="top"><h1>'+esc(SITE.name)+'</h1></div>'+carousel(heroes);
     if(rec){var w=work(rec.id),e=EPS[w.id].episodes[rec.ep-1];
       h+='<div class="sec"><h2>繼續閱讀</h2></div><div class="cont"><img src="'+wimg(w,w.cover)+'" alt=""><div class="t"><b>'+esc(w.title)+'－'+esc(w.subtitle)+'</b><span>讀到第 '+rec.ep+' 集・'+esc(e?tt(e):'')+'</span></div><button class="go" data-go="#/w/'+w.id+'/'+rec.ep+'">繼續</button></div>'}
-    h+='<div class="sec"><h2>全部作品</h2><small>'+WORKS.length+' 部</small></div><div class="shelf">'+WORKS.map(bookCard).join('')+
-       '<a class="book soon" href="#/soon"><div class="pic"><img src="soon/card.jpg" alt=""><span class="lbl">敬請期待</span></div><b>下一部作品</b><small>籌備中・先睹為快</small></a></div>';
+    h+='<div class="sec"><h2>全部作品</h2><small>'+WORKS.length+' 部</small></div><div class="shelf">'+WORKS.map(bookCard).join('')+'</div>';
     app.className='wrap hasnav';app.innerHTML=h+nav('home');
     bindGo();startCarousel();
   }).catch(fail);
@@ -434,8 +433,7 @@ function favPage(){
 }
 
 /* ---------- 敬請期待：籌備中的作品先給朋友看 ---------- */
-var SOON=[['168 台股投資教室・Q人的練功之路',['soon/168_home.jpg']],['168 可轉債研究室',['soon/168_cb.jpg']],['168 台股投資練功房',['soon/168_stock.jpg']],['168 書房',['soon/168_study.jpg']],['168 YA問',['soon/168_yaask.jpg']],
-  ['表情貼圖',['soon/mascot1.jpg','soon/mascot2.jpg','soon/mascot3.jpg','soon/mascot4.jpg']]];
+var SOON=[['168 可轉債研究室',['soon/168_cb.jpg']],['168 台股投資練功房',['soon/168_stock.jpg']],['168 書房',['soon/168_study.jpg']],['168 YA問',['soon/168_yaask.jpg']]];
 function soonPage(){
   app.className='wrap';
   app.innerHTML='<div class="top"><button class="ic" data-go="#/" aria-label="回首頁" style="color:var(--text)">‹</button><h1>敬請期待</h1><span style="width:40px"></span></div>'+
