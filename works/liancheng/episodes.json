@@ -192,7 +192,7 @@
    "status": "ready",
    "file": "EP007.md",
    "title": "明天公演，他的戲服不見了！",
-   "img": "img/ep/EP007.jpg",
+   "img": "img/ep/EP007_封面_戲服不見_20261026.jpg",
    "pics": [
     {
      "after": "導演懶得理他，蹲下去把舊膠帶撕掉。",
@@ -387,6 +387,7 @@
    "status": "ready",
    "file": "EP016.md",
    "title": "小姐開口：我要終生不嫁！",
+   "img": "img/ep/EP016_封面_終生不嫁_20261026.jpg",
    "pics": [
     {
      "after": "連城把書合起，目光落在窗外花枝的影子上。",
@@ -400,6 +401,7 @@
    "status": "ready",
    "file": "EP017.md",
    "title": "她要的夫婿，得敢說「看不懂」",
+   "img": "img/ep/EP017_封面_看不懂_20261026.jpg",
    "pics": [
     {
      "after": "小蝶把各色絲線排齊，自告奮勇要替她選色。",
@@ -425,6 +427,7 @@
    "status": "ready",
    "file": "EP018.md",
    "title": "想娶她？先猜畫中人在想什麼",
+   "img": "img/ep/EP018_封面_猜畫中人_20261026.jpg",
    "script": {
     "end": [
      "chapters/script/06.jpg",
@@ -488,6 +491,7 @@
    "status": "ready",
    "file": "EP020.md",
    "title": "四句詩，讓她看到茶都涼了",
+   "img": "img/ep/EP020_封面_茶涼了_20261026.jpg",
    "pics": [
     {
      "after": "慵鬟高髻綠婆娑",
@@ -511,6 +515,7 @@
    "status": "ready",
    "file": "EP021.md",
    "title": "他窮，是因為錢都先給了別人",
+   "img": "img/ep/EP021_封面_錢給別人_20261026.jpg",
    "pics": [
     {
      "after": "穿一根針，又不是繡一整幅屏風。",
@@ -723,7 +728,7 @@
    "status": "ready",
    "file": "EP028.md",
    "title": "嫁他？妳病了，他拿什麼買藥",
-   "img": "img/ep/EP028_封面_指著藥碗_20261026.jpg",
+   "img": "img/ep/EP028_封面_藥碗紅帖_20261026.jpg",
    "pics": [
     {
      "after": "連城猛地縮回手。",
@@ -753,7 +758,7 @@
    "status": "ready",
    "file": "EP029.md",
    "title": "銀子能買藥，買不到我愛誰",
-   "img": "img/ep/EP029_封面_父女距離_20261026.jpg",
+   "img": "img/ep/EP029_封面_銀子與藥_20261026.jpg",
    "pics": [
     {
      "after": "小蝶立即抱起石榴紅那匹布，往連城身上比。",
@@ -954,7 +959,8 @@
    "era": "1998",
    "status": "ready",
    "file": "EP035.md",
-   "title": "他溫柔的眼神，給了另一個女人"
+   "title": "他溫柔的眼神，給了另一個女人",
+   "img": "img/ep/EP035_封面_台下望著_20261026.jpg"
   },
   {
    "ep": 36,
