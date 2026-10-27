@@ -13,7 +13,7 @@ def main():
     pre = {'json': {}, 'text': {}, 'img': {}}
     def img(p):
         ext = p.rsplit('.', 1)[-1].lower()
-        mime = 'image/png' if ext == 'png' else 'image/jpeg'
+        mime = {'png': 'image/png', 'webp': 'image/webp'}.get(ext, 'image/jpeg')
         pre['img'][p] = 'data:%s;base64,%s' % (mime, base64.b64encode(open(os.path.join(root, p), 'rb').read()).decode())
     drafts = sys.argv[sys.argv.index('--drafts') + 1] if '--drafts' in sys.argv else None
     site = json.loads(rd('data/works.json')); pre['json']['data/works.json'] = site

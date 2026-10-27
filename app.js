@@ -72,13 +72,15 @@ function nav(on){
     return'<a href="'+x[1]+'"'+(x[0]===on?' class="on"':'')+'><svg viewBox="0 0 24 24">'+I[x[0]]+'</svg>'+x[2]+'</a>'}).join('')+'</div>';
 }
 function carousel(imgs,cap){
-  return'<div class="hero">'+imgs.map(function(s,i){return'<img src="'+s+'" alt=""'+(i?'':' class="on"')+'>'}).join('')+
+  return'<div class="hero">'+imgs.map(function(s,i){return i?'<img data-src="'+s+'" alt="">':'<img src="'+s+'" alt="" class="on" fetchpriority="high">'}).join('')+
     (cap?'<div class="cap">'+cap+'</div>':'')+
     '<div class="dots">'+imgs.map(function(s,i){return'<i'+(i?'':' class="on"')+'></i>'}).join('')+'</div></div>';
 }
 function startCarousel(){
   var imgs=app.querySelectorAll('.hero img'),dots=app.querySelectorAll('.dots i'),k=0;
   if(imgs.length<2)return;
+  var rest=function(){imgs.forEach(function(im){if(im.dataset.src){im.src=im.dataset.src;im.removeAttribute('data-src')}})};   // 第一張到了，才載其餘幾張
+  if(imgs[0].complete)rest();else{imgs[0].addEventListener('load',rest);imgs[0].addEventListener('error',rest)}
   timer=setInterval(function(){imgs[k].classList.remove('on');dots[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on');dots[k].classList.add('on')},4500);
 }
 
@@ -185,13 +187,14 @@ function reader(w,n){
   lsEnter(w,n,e,nx);
   var tb=document.getElementById('ttsb');
   if(tb)tb.onclick=function(){lsStart()};
-  var body=document.getElementById('body'), key='pos_'+w.id+'_'+n, loaded=false;
+  var body=document.getElementById('body'), key='pos_'+w.id+'_'+n, loaded=false, pre=0;
   if(onScroll)window.removeEventListener('scroll',onScroll);
   onScroll=function(){
     var max=document.documentElement.scrollHeight-innerHeight, r=max>0?scrollY/max:1;
     var bar=document.getElementById('rbar');if(bar)bar.style.width=Math.round(r*100)+'%';
     if(!loaded)return;          // 正文還沒排好之前的捲動不算數，免得把上次的位置蓋掉
     store.set(key,r); if(r>0.92)markRead(w.id,n);
+    if(r>0.6&&!pre&&nx&&nx.img){pre=1;(new Image()).src=wimg(w,nx.img)}   // 快讀完時先把下一集封面抓好
   };
   window.addEventListener('scroll',onScroll,{passive:true});
   if(!ready(e)){body.innerHTML='<div class="empty"><div class="big">✎</div>'+(e.status==='planned'?'這一集還在規劃中。':'這一集還在撰寫中。<br>上架之後會直接出現在這裡。')+'</div>';return}
@@ -365,7 +368,7 @@ function lsStart(){   // 按「聽」：從畫面上正在看的那一段開始
 function lsMeta(){
   var c=ls.ctx;if(!c||!('mediaSession' in navigator)||!window.MediaMetadata)return;
   try{navigator.mediaSession.metadata=new MediaMetadata({title:'第 '+c.n+' 集　'+tt(c.e),artist:c.w.title+'－'+c.w.subtitle,album:c.w.title,
-    artwork:[{src:new URL(wimg(c.w,c.w.cover),location.href).href,sizes:'600x800',type:'image/jpeg'}]})}catch(e){}
+    artwork:[{src:new URL(wimg(c.w,c.w.cover),location.href).href,sizes:'600x800',type:/\.webp$/.test(c.w.cover)?'image/webp':'image/jpeg'}]})}catch(e){}
 }
 function lsJump(d){   // 上一段／下一段
   var a=ls.au;if(!a||!ls.seg.length)return;
