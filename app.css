@@ -2,7 +2,7 @@
   --bg:#120c0b; --bg2:#1d1513; --card:#261c19; --line:#3a2c27;
   --text:#f3e9df; --sub:#b9a89b; --dim:#76665c;
   --gold:#e0b56a; --red:#b3262e; --pink:#f2a7b6;
-  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --serif:"Songti TC","Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","STSong","PMingLiU","MingLiU",serif;   /* 用手機內建的宋體，不再下載網頁字型 */
   --sans:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
   --nav:58px;
 }
