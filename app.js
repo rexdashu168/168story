@@ -57,6 +57,7 @@ function route(){
   if(onScroll){window.removeEventListener('scroll',onScroll);onScroll=null}   // 離開閱讀頁就不再記位置
   var h=location.hash.replace(/^#\/?/,'').split('/');
   if(h[0]==='w'&&work(h[1])){var w=work(h[1]);return loadEps(w).then(function(){h[2]?reader(w,+h[2]):workPage(w)}).catch(fail)}
+  if(!(h[0]==='w'&&h[2])&&window.loadFonts)setTimeout(window.loadFonts,1500);   // 非閱讀頁：頁面出來後再載字型
   if(h[0]==='fav')return favPage();
   if(h[0]==='me')return mePage();
   if(h[0]==='soon')return soonPage();
@@ -168,12 +169,14 @@ function reader(w,n){
   app.innerHTML='<div class="reader '+set.theme+(fab?' hasfab':'')+'" style="--fs:'+FS[set.fs]+'px">'+
    '<div class="rtop"><button class="ic" data-go="#/w/'+w.id+'" aria-label="回作品頁">‹</button><div class="t">第 '+n+' 集　'+esc(tt(e))+'</div><button class="ic" id="aa" aria-label="閱讀設定" style="font-size:16px">Aa</button></div>'+
    '<div class="rbar"><i id="rbar"></i></div>'+
-   (e.img?'<figure class="epimg"><img src="'+esc(wimg(w,e.img))+'" alt=""></figure>':'')+'<div class="rhead"><div class="sc">'+eraName(e)+'・第 '+n+' 集</div><h2>'+esc(tt(e))+'</h2><div class="orn">◆ ◆ ◆</div></div>'+(e.status==='draft'?'<div class="draftnote">舊版備份，尚未經作者核定，只在私人預覽檔出現，不會公開。</div>':'')+
+   (e.img?'<figure class="epimg"><img src="'+esc(wimg(w,e.img))+'" alt="" fetchpriority="high" decoding="async"></figure>':'')+'<div class="rhead"><div class="sc">'+eraName(e)+'・第 '+n+' 集</div><h2>'+esc(tt(e))+'</h2><div class="orn">◆ ◆ ◆</div></div>'+(e.status==='draft'?'<div class="draftnote">舊版備份，尚未經作者核定，只在私人預覽檔出現，不會公開。</div>':'')+
    '<div id="body"></div>'+
    '<div class="endcard"><div class="e1">第 '+n+' 集　完</div><div class="e2">'+(nx?'下一集：'+esc(tt(nx)):'全書完')+'</div></div>'+
    '<div class="rnav"><button id="prev"'+(n>1?'':' disabled')+'>‹ 上一集</button><button id="list">選集</button><button id="next"'+(nx?'':' disabled')+'>下一集 ›</button></div>'+
    (fab?'<button class="ttsfab" id="ttsb" aria-label="聽這一集">'+IC.ear+'<span>聽</span></button>':'')+'</div>';   // 聽的按鈕放右下角，大拇指按得到
   window.scrollTo(0,0);
+  var ci=app.querySelector('.epimg img');   // 封面先到，字型才開始下載
+  if(ci&&!ci.complete){ci.addEventListener('load',window.loadFonts);ci.addEventListener('error',window.loadFonts)}else if(window.loadFonts)window.loadFonts();
   bindGo();
   document.getElementById('prev').onclick=function(){location.hash='#/w/'+w.id+'/'+(n-1)};
   document.getElementById('next').onclick=function(){location.hash='#/w/'+w.id+'/'+(n+1)};
