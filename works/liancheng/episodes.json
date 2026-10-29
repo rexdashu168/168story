@@ -475,7 +475,13 @@
      "chapters/script/06.jpg",
      "chapters/script/07.jpg"
     ]
-   }
+   },
+   "pics": [
+    {
+     "after": "連父重新拿起書案旁的藥單。",
+     "img": "img/pic/EP018_書房藥單_20261029.webp"
+    }
+   ]
   },
   {
    "ep": 19,
@@ -1002,7 +1008,13 @@
    "status": "ready",
    "file": "EP035.md",
    "title": "他溫柔的眼神，給了另一個女人",
-   "img": "img/ep/EP035_封面_台下望著_20261026.webp"
+   "img": "img/ep/EP035_封面_台下望著_20261026.webp",
+   "pics": [
+    {
+     "after": "淑芬坐在最後一排，手裡捏著一張摺過的節目單。",
+     "img": "img/pic/EP035_最後一排節目單_20261029.webp"
+    }
+   ]
   },
   {
    "ep": 36,
