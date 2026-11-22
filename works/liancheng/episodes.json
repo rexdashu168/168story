@@ -1297,6 +1297,29 @@
    "status": "ready",
    "file": "EP047.md",
    "title": "替她受苦？窮書生說：我願意",
+   "img": "img/ep/EP047_封面_樹下望門_20261122.webp",
+   "pics": [
+    {
+     "after": "他停在路邊，低頭看著。",
+     "img": "img/pic/EP047_鞋子裂開_20261122.webp"
+    },
+    {
+     "after": "走出門前，又回頭向鞋匠行了一禮。",
+     "img": "img/pic/EP047_向鞋匠行禮_20261122.webp"
+    },
+    {
+     "after": "心裡第一次生出一種近乎無力的焦急。",
+     "img": "img/pic/EP047_門前焦急_20261122.webp"
+    },
+    {
+     "after": "只剩側邊一處供行人歇腳的簷廊還開著",
+     "img": "img/pic/EP047_廟旁簷廊_20261122.webp"
+    },
+    {
+     "after": "說完，他慢慢坐回樹下。",
+     "img": "img/pic/EP047_坐回樹下_20261122.webp"
+    }
+   ],
    "script": {
     "end": [
      "chapters/script/15.jpg"
