@@ -1565,6 +1565,29 @@
    "status": "ready",
    "file": "EP055.md",
    "title": "一炷香燒完前，你還能反悔",
+   "img": "img/ep/EP055_封面_香前再想一次_20261122.webp",
+   "pics": [
+    {
+     "after": "他的舊袈裟掛在廊下，晨風吹來，補過的布角輕輕晃動。",
+     "img": "img/pic/EP055_院裡洗茶碗_20261122.webp"
+    },
+    {
+     "after": "才過了一道廊，便看見連父迎面走來。",
+     "img": "img/pic/EP055_長廊報急_20261122.webp"
+    },
+    {
+     "after": "喬年忽然拿出紙筆。",
+     "img": "img/pic/EP055_香淡時寫信_20261122.webp"
+    },
+    {
+     "after": "忽然深深彎下身去。",
+     "img": "img/pic/EP055_深深一拜_20261122.webp"
+    },
+    {
+     "after": "窗外那株桂花樹，枝葉在夜風裡輕輕搖動。",
+     "img": "img/pic/EP055_窗前望桂花_20261122.webp"
+    }
+   ],
    "script": {
     "end": [
      "chapters/script/16.jpg",
