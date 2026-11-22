@@ -1691,6 +1691,29 @@
    "status": "ready",
    "file": "EP059.md",
    "title": "她病得說不出話，你卻談條件？",
+   "img": "img/ep/EP059_封面_拍桌而起_20261122.webp",
+   "pics": [
+    {
+     "after": "他吃了兩口，便沒了胃口。",
+     "img": "img/pic/EP059_涼粥兩口_20261122.webp"
+    },
+    {
+     "after": "你們兩個，可真叫人操心。",
+     "img": "img/pic/EP059_床尾叫孩子_20261122.webp"
+    },
+    {
+     "after": "回頭望了一眼連府外廳。",
+     "img": "img/pic/EP059_回望外廳_20261122.webp"
+    },
+    {
+     "after": "連父望見，忽然伸手拿起來。",
+     "img": "img/pic/EP059_長短耳兔_20261122.webp"
+    },
+    {
+     "after": "王化成慢慢握緊那張紅紙。",
+     "img": "img/pic/EP059_窗前握紅紙_20261122.webp"
+    }
+   ],
    "script": {
     "end": [
      "chapters/script/18.jpg"
