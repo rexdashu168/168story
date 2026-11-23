@@ -10,13 +10,13 @@
 html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans)}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 a{color:inherit;text-decoration:none}
-.wrap{padding-top:env(safe-area-inset-top);position:relative;max-width:720px;margin:0 auto;min-height:100vh;background:var(--bg)}
+.wrap{position:relative;max-width:720px;margin:0 auto;min-height:100vh;background:var(--bg)}
 .wrap.hasnav{padding-bottom:calc(var(--nav) + env(safe-area-inset-bottom))}
 .empty{text-align:center;color:var(--sub);padding:40px 22px 60px;font-size:15px;line-height:1.9}
 .empty .big{font-size:34px;margin-bottom:8px}
 
 /* 頁首 */
-.top{position:sticky;top:env(safe-area-inset-top);z-index:6;display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 16px;background:var(--bg)}
+.top{position:sticky;top:0;z-index:6;display:flex;align-items:center;justify-content:space-between;height:calc(52px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 16px 0;box-sizing:border-box;background:var(--bg)}
 .top h1{margin:0;font-family:var(--serif);font-size:20px;letter-spacing:2px;color:var(--gold)}
 .top .sub{font-size:13px;color:var(--sub)}
 .pagett{font-size:22px;font-weight:700;padding:14px 16px 6px}
@@ -132,7 +132,7 @@ a{color:inherit;text-decoration:none}
 .reader{--rbg:#17110f;--rtx:#e9ddd1;--rsub:#9c8b7e;--fs:19px;background:var(--rbg);color:var(--rtx);min-height:100vh}
 .reader.paper{--rbg:#f4ead8;--rtx:#3a2c22;--rsub:#8a7461}
 .reader.white{--rbg:#ffffff;--rtx:#222;--rsub:#888}
-.rtop{position:sticky;top:env(safe-area-inset-top);z-index:5;display:flex;align-items:center;gap:6px;height:50px;padding:0 8px;background:var(--rbg);border-bottom:1px solid #8884}
+.rtop{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:6px;height:calc(50px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 8px 0;box-sizing:border-box;background:var(--rbg);border-bottom:1px solid #8884}
 .rtop .t{flex:1;text-align:center;font-size:15px;color:var(--rsub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rbar{position:sticky;top:calc(50px + env(safe-area-inset-top));z-index:5;height:2px;background:transparent}
 .rbar i{display:block;height:100%;width:0;background:var(--gold)}
