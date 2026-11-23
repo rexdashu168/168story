@@ -5,21 +5,24 @@
    "era": "新人進場",
    "status": "ready",
    "file": "EP001.md",
-   "title": "正式接單第一天，我就被一通電話問倒了"
+   "title": "正式接單第一天，我就被一通電話問倒了",
+   "img": "img/ep/EP001.webp"
   },
   {
    "ep": 2,
    "era": "新人進場",
    "status": "ready",
    "file": "EP002.md",
-   "title": "客戶說「買一張」，我居然愣住了"
+   "title": "客戶說「買一張」，我居然愣住了",
+   "img": "img/ep/EP002.webp"
   },
   {
    "ep": 3,
    "era": "新人進場",
    "status": "ready",
    "file": "EP003.md",
-   "title": "剛剛明明四十二塊八，怎麼一開盤就變了？"
+   "title": "剛剛明明四十二塊八，怎麼一開盤就變了？",
+   "img": "img/ep/EP003.webp"
   },
   {
    "ep": 4,
@@ -110,7 +113,8 @@
    "era": "走出營業廳",
    "status": "ready",
    "file": "EP016.md",
-   "title": "App掛掉那天，四支電話一起響了"
+   "title": "App掛掉那天，四支電話一起響了",
+   "img": "img/ep/EP016.webp"
   },
   {
    "ep": 17,
