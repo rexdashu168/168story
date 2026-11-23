@@ -30,8 +30,9 @@ def check(root):
                 errs.append('%s：公開目錄出現不該有的欄位 %s' % (tag, sorted(set(e) - KEYS)))
             if e['status'] not in ('ready', 'writing', 'planned'):
                 errs.append('%s：狀態只能是 ready／writing／planned，現在是 %s' % (tag, e['status']))
-            if e.get('era') not in ('1998', '古代'):
-                errs.append('%s：era 只能是 1998 或 古代' % tag)
+            ok_era = [x[0] for x in w['eras'] if x[0] != 'all'] if w.get('eras') else ['1998', '古代']
+            if e.get('era') not in ok_era:
+                errs.append('%s：era 只能是 %s' % (tag, '、'.join(ok_era)))
             if e['status'] != 'planned' and not e.get('title'):
                 errs.append('%s：沒有標題' % tag)
             for n in OLD_NAMES:
@@ -84,7 +85,7 @@ def self_test(root):
     tmp = tempfile.mkdtemp()
     try:
         t = os.path.join(tmp, 'n')
-        shutil.copytree(root, t, ignore=shutil.ignore_patterns('tools'))
+        shutil.copytree(root, t, ignore=shutil.ignore_patterns('tools', '.git'))
         errs, _ = check(t)
         assert not errs, '正對照組（目前的網站）就有錯：%s' % errs
         p = os.path.join(t, 'works', 'liancheng', 'episodes.json')

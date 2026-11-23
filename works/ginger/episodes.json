@@ -1,0 +1,424 @@
+{
+ "episodes": [
+  {
+   "ep": 1,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP001.md",
+   "title": "正式接單第一天，我就被一通電話問倒了"
+  },
+  {
+   "ep": 2,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP002.md",
+   "title": "客戶說「買一張」，我居然愣住了"
+  },
+  {
+   "ep": 3,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP003.md",
+   "title": "剛剛明明四十二塊八，怎麼一開盤就變了？"
+  },
+  {
+   "ep": 4,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP004.md",
+   "title": "一點半都收盤了，我怎麼三點半還走不了？"
+  },
+  {
+   "ep": 5,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP005.md",
+   "title": "那一百張，剛剛不是還在嗎？"
+  },
+  {
+   "ep": 6,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP006.md",
+   "title": "欸，他竟然記得我叫小薑"
+  },
+  {
+   "ep": 7,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP007.md",
+   "title": "怎麼就挨罵了？昨天又不是我處理的"
+  },
+  {
+   "ep": 8,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP008.md",
+   "title": "我就買一點點，應該沒關係吧？"
+  },
+  {
+   "ep": 9,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP009.md",
+   "title": "欸？我第一次買，真的就漲了"
+  },
+  {
+   "ep": 10,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP010.md",
+   "title": "早知道，我就不只買一張"
+  },
+  {
+   "ep": 11,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP011.md",
+   "title": "這個『所以』，誰准你寫上去的？"
+  },
+  {
+   "ep": 12,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP012.md",
+   "title": "消息是真的，那還有什麼好懷疑的？"
+  },
+  {
+   "ep": 13,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP013.md",
+   "title": "老薑，你是不是沒看懂這一波？"
+  },
+  {
+   "ep": 14,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP014.md",
+   "title": "我這次有七個理由，總不會又錯吧？"
+  },
+  {
+   "ep": 15,
+   "era": "新人進場",
+   "status": "ready",
+   "file": "EP015.md",
+   "title": "我好像真的會了，對吧？"
+  },
+  {
+   "ep": 16,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP016.md",
+   "title": "App掛掉那天，四支電話一起響了"
+  },
+  {
+   "ep": 17,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP017.md",
+   "title": "我們賣的不是ETF，是責任額"
+  },
+  {
+   "ep": 18,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP018.md",
+   "title": "姜哥，你今天不是來買車的吧？"
+  },
+  {
+   "ep": 19,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP019.md",
+   "title": "早餐店闆娘，怎麼比新聞還早知道？"
+  },
+  {
+   "ep": 20,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP020.md",
+   "title": "竹科工程師午休算出7.2，真的有那麼準？"
+  },
+  {
+   "ep": 21,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP021.md",
+   "title": "貴婦辣媽：我今天不是來問哪支股票會漲"
+  },
+  {
+   "ep": 22,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP022.md",
+   "title": "新聞今天才寫？貨櫃女王笑了"
+  },
+  {
+   "ep": 23,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP023.md",
+   "title": "工廠裡沒有K線，螺絲女董還是知道景氣"
+  },
+  {
+   "ep": 24,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP024.md",
+   "title": "法說會小姐說：公司沒說的，也是一種訊息"
+  },
+  {
+   "ep": 25,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP025.md",
+   "title": "高爾夫球小王子，一桿打出去消息就傳開了"
+  },
+  {
+   "ep": 26,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP026.md",
+   "title": "阿哲這次沒問價格"
+  },
+  {
+   "ep": 27,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP027.md",
+   "title": "曼曼終於賣了，結果它又漲"
+  },
+  {
+   "ep": 28,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP028.md",
+   "title": "老薑，你這次可能看錯了"
+  },
+  {
+   "ep": 29,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP029.md",
+   "title": "這次，真的是小薑先看懂了"
+  },
+  {
+   "ep": 30,
+   "era": "走出營業廳",
+   "status": "ready",
+   "file": "EP030.md",
+   "title": "明明看對公司，為什麼還是沒賺到錢？"
+  },
+  {
+   "ep": 31,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP031.md",
+   "title": "今天明明贏了七次，帳戶怎麼又少了？"
+  },
+  {
+   "ep": 32,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP032.md",
+   "title": "他剛賠錢，怎麼還在喝咖啡？"
+  },
+  {
+   "ep": 33,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP033.md",
+   "title": "他下單以前，怎麼先把『怎麼輸』寫好了？"
+  },
+  {
+   "ep": 34,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP034.md",
+   "title": "不蝕本股神那本舊筆記，到底寫了幾十年？"
+  },
+  {
+   "ep": 35,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP035.md",
+   "title": "大家都在漲，現金姐為什麼還坐著不動？"
+  },
+  {
+   "ep": 36,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP036.md",
+   "title": "House這次下得比平常大"
+  },
+  {
+   "ep": 37,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP037.md",
+   "title": "成交王說：再補一點，就會回來了"
+  },
+  {
+   "ep": 38,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP038.md",
+   "title": "跌停那天，催繳電話一支接一支"
+  },
+  {
+   "ep": 39,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP039.md",
+   "title": "我要是那麼神，還會坐在這裡接電話？"
+  },
+  {
+   "ep": 40,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP040.md",
+   "title": "漲停那一秒，我的心臟漏了三拍"
+  },
+  {
+   "ep": 41,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP041.md",
+   "title": "財報明明說有錢，錢去哪裡了？"
+  },
+  {
+   "ep": 42,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP042.md",
+   "title": "天燈第一次亮起來，大家都說消息很準"
+  },
+  {
+   "ep": 43,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP043.md",
+   "title": "消息又對了，這次還要懷疑嗎？"
+  },
+  {
+   "ep": 44,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP044.md",
+   "title": "我們是不是比市場早知道？"
+  },
+  {
+   "ep": 45,
+   "era": "交易與人性",
+   "status": "ready",
+   "file": "EP045.md",
+   "title": "天燈越飛越高，誰還捨得先走？"
+  },
+  {
+   "ep": 46,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP046.md",
+   "title": "老薑看到「天燈」兩個字，第一次沒有接話"
+  },
+  {
+   "ep": 47,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP047.md",
+   "title": "「正川，好久不見。」小薑第一次聽人這樣叫他"
+  },
+  {
+   "ep": 48,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP048.md",
+   "title": "原來老薑以前也相信過「這次不一樣」"
+  },
+  {
+   "ep": 49,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP049.md",
+   "title": "股票都快不行了，那張債怎麼還有人買？"
+  },
+  {
+   "ep": 50,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP050.md",
+   "title": "同一家公司，有人是股東，有人只是借錢給它"
+  },
+  {
+   "ep": 51,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP051.md",
+   "title": "公司缺錢的時候，為什麼不直接跟銀行借？"
+  },
+  {
+   "ep": 52,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP052.md",
+   "title": "現增打折，看起來便宜就真的便宜嗎？"
+  },
+  {
+   "ep": 53,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP053.md",
+   "title": "可轉債到底是債，還是有一天會變成股票？"
+  },
+  {
+   "ep": 54,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP054.md",
+   "title": "天燈開始往下掉，大家卻忙著找風"
+  },
+  {
+   "ep": 55,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP055.md",
+   "title": "都出事了，怎麼還有人說「再等等」？"
+  },
+  {
+   "ep": 56,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP056.md",
+   "title": "那一天，天燈沒有再亮起來"
+  },
+  {
+   "ep": 57,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP057.md",
+   "title": "帳戶清掉以後，人還要怎麼回來？"
+  },
+  {
+   "ep": 58,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP058.md",
+   "title": "很多年後，小薑第一次說：老薑，這次我不同意"
+  },
+  {
+   "ep": 59,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP059.md",
+   "title": "行情這麼好，他們怎麼反而不太說話了？"
+  },
+  {
+   "ep": 60,
+   "era": "你坐在哪一邊",
+   "status": "ready",
+   "file": "EP060.md",
+   "title": "『八點多怎麼已經有價格？』這一次，老薑只說：妳來"
+  }
+ ]
+}

@@ -4,9 +4,10 @@
 var PRE=window.__PRE||null;          // 預覽檔才會有：把資料與圖片內嵌進同一個檔
 var app=document.getElementById('app');
 var SITE=null, WORKS=[], EPS={};     // EPS[作品id] = {episodes}
-var ERAS=[['all','全部'],['1998','1998 劇團'],['古代','古代故事']];
+var ERAS=[['all','全部'],['1998','1998 劇團'],['古代','古代故事']];   // 預設篩選（連城）；其他作品在 works.json 用 eras 自己定義
+function erasOf(w){return w.eras||ERAS}
 var RANGE=30, timer=null;
-var ui={tab:'intro',range:0,mode:null,era:'all'};
+var ui={tab:'intro',range:0,mode:null,era:'all',wid:''};
 
 /* ---------- 小工具 ---------- */
 var store={
@@ -22,7 +23,7 @@ function wimg(w,p){return src(wbase(w)+p)}
 function work(id){for(var i=0;i<WORKS.length;i++)if(WORKS[i].id===id)return WORKS[i];return null}
 function ready(e){return e.status==='ready'||e.status==='draft'}   // draft 只會出現在私人預覽檔
 function tt(e){return e.status==='planned'?'規劃中':e.title}
-function eraName(e){return e.era==='古代'?'古代故事':'1998 劇團'}
+function eraName(w,e){if(w.eras){var x=w.eras.filter(function(z){return z[0]===e.era})[0];return x?x[1]:esc(e.era)}return e.era==='古代'?'古代故事':'1998 劇團'}
 function pubCount(d){return d.episodes.filter(function(e){return e.status==='ready'}).length}
 function latest(d){var r=d.episodes.filter(function(e){return e.status==='ready'});return r.length?r[r.length-1]:null}
 function getJSON(p){
@@ -86,7 +87,7 @@ function startCarousel(){
 /* ---------- 首頁 ---------- */
 function home(){
   Promise.all(WORKS.map(loadEps)).then(function(){
-    var heroes=[];WORKS.forEach(function(w){w.hero.forEach(function(p){heroes.push(wimg(w,p))})});
+    var heroes=[];WORKS.forEach(function(w){if(w.homeHero===false)return;w.hero.forEach(function(p){heroes.push(wimg(w,p))})});
     var rec=store.get('recent',[]).filter(function(x){return work(x.id)})[0];
     var h='<div class="top"><h1>'+esc(SITE.name)+'</h1></div>'+carousel(heroes);
     if(rec){var w=work(rec.id),e=EPS[w.id].episodes[rec.ep-1];
@@ -107,6 +108,7 @@ function bindGo(){app.querySelectorAll('[data-go]').forEach(function(b){b.onclic
 function workPage(w){
   var d=EPS[w.id],last=lastEp(w.id),fav=favs().indexOf(w.id)>=0,n=d.episodes.length,rd=readSet(w.id).length;
   if(ui.mode===null)ui.mode=store.get('mode','grid');
+  if(ui.wid!==w.id){ui.wid=w.id;ui.era='all'}   // 換作品就把篩選歸零
   ui.range=rangeOf(last||1);
   var h=carousel(w.hero.map(function(p){return wimg(w,p)}))+'<button class="back" data-go="#/" aria-label="回首頁">‹</button>'+
    '<div class="info"><img class="cover" src="'+wimg(w,w.cover)+'" alt=""><div><h1>'+esc(w.title)+'</h1><div class="st">'+esc(w.subtitle)+'</div>'+
@@ -137,7 +139,7 @@ function epList(w,cur){
   var d=EPS[w.id],R=ranges(d.episodes.length),r=R[ui.range]||R[0],rs=readSet(w.id);
   var h='<div class="bar"><div class="ranges">'+R.map(function(x,i){return'<button data-r="'+i+'"'+(x===r?' class="on"':'')+'>'+x[0]+'-'+x[1]+'</button>'}).join('')+'</div>'+
    '<div class="mode"><button data-m="grid"'+(ui.mode==='grid'?' class="on"':'')+'>格子</button><button data-m="toc"'+(ui.mode==='toc'?' class="on"':'')+'>目錄</button></div></div>'+
-   '<div class="eras">'+ERAS.map(function(x){return'<button data-era="'+x[0]+'"'+(x[0]===ui.era?' class="on"':'')+'>'+x[1]+'</button>'}).join('')+'</div>';
+   '<div class="eras">'+erasOf(w).map(function(x){return'<button data-era="'+x[0]+'"'+(x[0]===ui.era?' class="on"':'')+'>'+x[1]+'</button>'}).join('')+'</div>';
   var list=d.episodes.slice(r[0]-1,r[1]).filter(function(e){return ui.era==='all'||e.era===ui.era});
   function cls(e){return(e.status==='planned'?' plan':ready(e)?'':' wip')+(rs.indexOf(e.ep)>=0?' read':'')+(e.ep===cur?' cur':'')}
   function tag(e){return e.status==='planned'?'<em>規劃中</em>':e.status==='draft'?'<em class="dr">舊版待核</em>':ready(e)?'':'<em>撰寫中</em>'}
@@ -170,7 +172,7 @@ function reader(w,n){
   app.innerHTML='<div class="reader '+set.theme+(fab?' hasfab':'')+'" style="--fs:'+FS[set.fs]+'px">'+
    '<div class="rtop"><button class="ic" data-go="#/w/'+w.id+'" aria-label="回作品頁">‹</button><div class="t">第 '+n+' 集　'+esc(tt(e))+'</div><button class="ic" id="aa" aria-label="閱讀設定" style="font-size:16px">Aa</button></div>'+
    '<div class="rbar"><i id="rbar"></i></div>'+
-   (e.img?'<figure class="epimg"><img src="'+esc(wimg(w,e.img))+'" alt="" fetchpriority="high" decoding="async"></figure>':'')+'<div class="rhead"><div class="sc">'+eraName(e)+'・第 '+n+' 集</div><h2>'+esc(tt(e))+'</h2><div class="orn">◆ ◆ ◆</div></div>'+(e.status==='draft'?'<div class="draftnote">舊版備份，尚未經作者核定，只在私人預覽檔出現，不會公開。</div>':'')+
+   (e.img?'<figure class="epimg"><img src="'+esc(wimg(w,e.img))+'" alt="" fetchpriority="high" decoding="async"></figure>':'')+'<div class="rhead"><div class="sc">'+eraName(w,e)+'・第 '+n+' 集</div><h2>'+esc(tt(e))+'</h2><div class="orn">◆ ◆ ◆</div></div>'+(e.status==='draft'?'<div class="draftnote">舊版備份，尚未經作者核定，只在私人預覽檔出現，不會公開。</div>':'')+
    '<div id="body"></div>'+
    '<div class="endcard"><div class="e1">第 '+n+' 集　完</div><div class="e2">'+(nx?'下一集：'+esc(tt(nx)):'全書完')+'</div></div>'+
    '<div class="rnav"><button id="prev"'+(n>1?'':' disabled')+'>‹ 上一集</button><button id="list">選集</button><button id="next"'+(nx?'':' disabled')+'>下一集 ›</button></div>'+
@@ -221,7 +223,7 @@ function reader(w,n){
     },50);
   }).catch(function(){body.innerHTML='<div class="empty">正文讀取失敗，請重新整理。</div>'});
 }
-/* 正文格式：空一行＝分段；單獨一行 ---、***、＊＊＊ ＝場景轉換；**字**＝粗體；![說明](檔名) ＝插圖 */
+/* 正文格式：空一行＝分段；單獨一行 ---、***、＊＊＊ ＝場景轉換；**字**＝粗體；*字*＝斜體（內心話）；![說明](檔名) ＝插圖 */
 function md(t,base){
   return t.replace(/^﻿/,'').replace(/\r/g,'').split(/\n\s*\n/).map(function(b){
     b=b.trim(); if(!b)return'';
@@ -234,7 +236,7 @@ function md(t,base){
     }
     var im=b.match(IMG);
     if(im)return'<figure><img src="'+esc(src(base+im[2]))+'" alt="'+esc(im[1])+'" loading="lazy">'+(im[1]?'<figcaption>'+esc(im[1])+'</figcaption>':'')+'</figure>';
-    return'<p>'+esc(b).replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>';   // **字** 顯示成粗體，不露出星號
+    return'<p>'+esc(b).replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>').replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g,'$1<i>$2</i>').replace(/\n/g,'<br>')+'</p>';   // **字** 顯示成粗體，不露出星號
   }).join('');
 }
 function vpSize(){   // 題畫詩字級：圖片寬度的 4.2%，但最長那一句一定要在圖片高度內排成一直行（不用 cqw，舊版手機瀏覽器不支援）
@@ -257,6 +259,7 @@ function sheet(html,bind){
 }
 function listSheet(w,n){
   ui.range=rangeOf(n);if(ui.mode===null)ui.mode=store.get('mode','grid');
+  if(ui.wid!==w.id){ui.wid=w.id;ui.era='all'}
   sheet('<h3>'+esc(w.title)+'－'+esc(w.subtitle)+'</h3><div id="sl"></div>',function(s,close){
     var box=s.querySelector('#sl');
     function draw(){box.innerHTML=epList(w,n);bindList(w,box,draw,close)}
