@@ -29,84 +29,96 @@
    "era": "新人進場",
    "status": "ready",
    "file": "EP004.md",
-   "title": "一點半都收盤了，我怎麼三點半還走不了？"
+   "title": "一點半都收盤了，我怎麼三點半還走不了？",
+   "img": "img/ep/EP004.webp"
   },
   {
    "ep": 5,
    "era": "新人進場",
    "status": "ready",
    "file": "EP005.md",
-   "title": "那一百張，剛剛不是還在嗎？"
+   "title": "那一百張，剛剛不是還在嗎？",
+   "img": "img/ep/EP005.webp"
   },
   {
    "ep": 6,
    "era": "新人進場",
    "status": "ready",
    "file": "EP006.md",
-   "title": "欸，他竟然記得我叫小薑"
+   "title": "欸，他竟然記得我叫小薑",
+   "img": "img/ep/EP006.webp"
   },
   {
    "ep": 7,
    "era": "新人進場",
    "status": "ready",
    "file": "EP007.md",
-   "title": "怎麼就挨罵了？昨天又不是我處理的"
+   "title": "怎麼就挨罵了？昨天又不是我處理的",
+   "img": "img/ep/EP007.webp"
   },
   {
    "ep": 8,
    "era": "新人進場",
    "status": "ready",
    "file": "EP008.md",
-   "title": "我就買一點點，應該沒關係吧？"
+   "title": "我就買一點點，應該沒關係吧？",
+   "img": "img/ep/EP008.webp"
   },
   {
    "ep": 9,
    "era": "新人進場",
    "status": "ready",
    "file": "EP009.md",
-   "title": "欸？我第一次買，真的就漲了"
+   "title": "欸？我第一次買，真的就漲了",
+   "img": "img/ep/EP009.webp"
   },
   {
    "ep": 10,
    "era": "新人進場",
    "status": "ready",
    "file": "EP010.md",
-   "title": "早知道，我就不只買一張"
+   "title": "早知道，我就不只買一張",
+   "img": "img/ep/EP010.webp"
   },
   {
    "ep": 11,
    "era": "新人進場",
    "status": "ready",
    "file": "EP011.md",
-   "title": "這個『所以』，誰准你寫上去的？"
+   "title": "這個『所以』，誰准你寫上去的？",
+   "img": "img/ep/EP011.webp"
   },
   {
    "ep": 12,
    "era": "新人進場",
    "status": "ready",
    "file": "EP012.md",
-   "title": "消息是真的，那還有什麼好懷疑的？"
+   "title": "消息是真的，那還有什麼好懷疑的？",
+   "img": "img/ep/EP012.webp"
   },
   {
    "ep": 13,
    "era": "新人進場",
    "status": "ready",
    "file": "EP013.md",
-   "title": "老薑，你是不是沒看懂這一波？"
+   "title": "老薑，你是不是沒看懂這一波？",
+   "img": "img/ep/EP013.webp"
   },
   {
    "ep": 14,
    "era": "新人進場",
    "status": "ready",
    "file": "EP014.md",
-   "title": "我這次有七個理由，總不會又錯吧？"
+   "title": "我這次有七個理由，總不會又錯吧？",
+   "img": "img/ep/EP014.webp"
   },
   {
    "ep": 15,
    "era": "新人進場",
    "status": "ready",
    "file": "EP015.md",
-   "title": "我好像真的會了，對吧？"
+   "title": "我好像真的會了，對吧？",
+   "img": "img/ep/EP015.webp"
   },
   {
    "ep": 16,
@@ -121,7 +133,8 @@
    "era": "走出營業廳",
    "status": "ready",
    "file": "EP017.md",
-   "title": "我們賣的不是ETF，是責任額"
+   "title": "我們賣的不是ETF，是責任額",
+   "img": "img/ep/EP017.webp"
   },
   {
    "ep": 18,
