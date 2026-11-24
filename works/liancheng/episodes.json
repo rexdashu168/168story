@@ -2001,6 +2001,29 @@
    "status": "ready",
    "file": "EP069.md",
    "title": "黃泉之下：我們還要做夫妻",
+   "img": "img/ep/EP069_封面_相約做夫妻_20261124.webp",
+   "pics": [
+    {
+     "after": "可拿起之後，卻又不知道該寫些什麼。",
+     "img": "img/pic/EP069_提筆難下_20261124.webp"
+    },
+    {
+     "after": "只知道一道看起來不過幾寸高的石線，竟將兩個人的去留分得清清楚楚。",
+     "img": "img/pic/EP069_門檻之前_20261124.webp"
+    },
+    {
+     "after": "他伸手探了探喬年的手腕。",
+     "img": "img/pic/EP069_探脈不能等_20261124.webp"
+    },
+    {
+     "after": "鄭重地行了一禮。",
+     "img": "img/pic/EP069_鄭重行禮_20261124.webp"
+    },
+    {
+     "after": "如今總算輪到我扶別人了。",
+     "img": "img/pic/EP069_換我扶你_20261124.webp"
+    }
+   ],
    "script": {
     "end": [
      "chapters/script/20.jpg",
