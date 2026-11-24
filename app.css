@@ -29,6 +29,7 @@ a{color:inherit;text-decoration:none}
 .nav a.on svg{stroke:var(--gold)}
 
 /* 海報輪播 */
+.sbar{height:env(safe-area-inset-top)}
 .hero{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s}
 .hero img.on{opacity:1}
