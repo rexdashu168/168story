@@ -1876,6 +1876,29 @@
    "status": "ready",
    "file": "EP065.md",
    "title": "病成這樣，她還惦記爹吃飯沒",
+   "img": "img/ep/EP065_封面_爹吃飯了嗎_20261124.webp",
+   "pics": [
+    {
+     "after": "將窗扇推開一道小縫。",
+     "img": "img/pic/EP065_推開一道縫_20261124.webp"
+    },
+    {
+     "after": "小蝶將銅鏡舉起。",
+     "img": "img/pic/EP065_銅鏡梳妝_20261124.webp"
+    },
+    {
+     "after": "王化成慢慢將帖子翻過去。",
+     "img": "img/pic/EP065_紅帖翻面_20261124.webp"
+    },
+    {
+     "after": "伸手折下一小枝仍開著的桂花。",
+     "img": "img/pic/EP065_折一小枝桂花_20261124.webp"
+    },
+    {
+     "after": "終於慢慢把針放下。",
+     "img": "img/pic/EP065_針終究放下_20261124.webp"
+    }
+   ],
    "script": {
     "end": [
      "chapters/script/19.jpg"
